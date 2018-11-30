@@ -1,0 +1,12 @@
+{{ partial "head" . }}
+  <body>
+    <section id="site-wrap">
+      {{ partial "navbar" . }}
+      {{ block "main" . -}}
+      {{- end }}
+    </section>
+    {{ $hash := .Site.Data.images.hash }}
+    {{ partial "footer" (dict "hash" $hash)}}
+    <script type="text/javascript" src="/js/{{ index .Site.Data.js.hash "main.js" }}"></script>
+  </body>
+<html>

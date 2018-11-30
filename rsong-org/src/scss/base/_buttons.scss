@@ -1,0 +1,64 @@
+@import 'tachyons/variables';
+
+.btn {
+  height: 44px;
+  background: none;
+  border: solid 1px $near-black;
+  color: $near-black;
+  text-align: center;
+  font-family: 'Graphik';
+  font-weight: 600;
+  letter-spacing: 0px;
+  padding: 0 $spacing-medium;
+  cursor: pointer;
+}
+
+a.btn {
+  display: inline-block;
+  line-height: 44px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  border: solid 1px $black;
+  color: $black;
+}
+
+.btn-blue {
+  background: $light-blue;
+  border: 1px solid $light-blue;
+  font-size: 0.8rem;
+  border-radius: .18rem;
+  color: white;
+  display: inline-block;
+  padding: .9rem 1rem;
+  text-decoration: none;
+  transition: .1s;
+}
+
+a.btn-blue {
+  color: $white;
+  outline: 0;
+}
+
+a:hover.btn-blue {
+  color: $white;
+  background: transparent;
+  outline: 0;
+}
+
+@media #{$breakpoint-not-small}{
+  .btn-blue {
+    padding: .9rem 2rem;
+  }
+}
+
+@media #{$breakpoint-medium} {
+  .main-headline {
+    max-width: 900px;
+  }
+}
+
+@media #{$breakpoint-large} {
+
+}

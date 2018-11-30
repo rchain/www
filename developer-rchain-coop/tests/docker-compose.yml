@@ -1,0 +1,21 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    volumes:
+      - ./crypto_flash.sql:/var/lib/crypto_flash.sql
+
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER:  crypto_flash
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+

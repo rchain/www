@@ -1,0 +1,21 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  namespace: dev
+  name: rsong-org
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rsong-org
+  template:
+    metadata:
+      labels:
+        app: rsong-org
+    spec:
+      containers:
+      - name: rsong-org
+        image: kayvank/rsong-org:1.0-96b17e8
+        ports:
+        - containerPort: 80

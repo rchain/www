@@ -1,0 +1,37 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# package directories
+**/node_modules
+jspm_packages
+
+# Optional npm cache directory
+.npm
+.npmrc
+package-lock.json
+**/*.lock
+# local envs, direnv
+.envrc
+
+# Optional REPL history
+.node_repl_history
+
+#IDE Stuff
+**/.\#*
+*.swp
+
+# OS STUFF
+.DS_Store
+.tmp
+
+# secret
+**/secret*.*
+
+# webpack stuff
+.webpack/
+.flow_build/
+public/
+data/
+static/

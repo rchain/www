@@ -1,0 +1,24 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: developer-rchain-coop
+  namespace: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: developer-rchain-coop
+  template:
+    metadata:
+      labels:
+        app: developer-rchain-coop
+    spec:
+      containers:
+      - name: developer-rchain-coop
+        image: kayvank/developer.rchain.coop:1.0-1785ed2
+        ports:
+        - containerPort: 3000
+        envFrom:
+          - configMapRef:
+              name: postgres-config

@@ -1,0 +1,30 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: rchain-coop
+  namespace: dev
+  annotations:
+    kubernetes.io/ingress.class: gce
+    kubernetes.io/ingress.global-static-ip-name: www-rchain-coop
+spec:
+  rules:
+  - host: rchain-coop.tk
+    http:
+      paths:
+        - backend:
+            serviceName: rchain-coop
+            servicePort: 3000
+  - host: developer-rchain-coop.tk
+    http:
+      paths:
+        - backend:
+            serviceName: developer-rchain-coop
+            servicePort: 3000
+
+  - host: rsong.cf
+    http:
+      paths:
+        - backend:
+            serviceName: rsong-org
+            servicePort: 80

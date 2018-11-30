@@ -1,0 +1,21 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  namespace: dev
+  name: rchain-coop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rchain-coop
+  template:
+    metadata:
+      labels:
+        app: rchain-coop
+    spec:
+      containers:
+      - name: rchain-coop
+        image: kayvank/rchain.coop:1.0-dev-build-1542235952
+        ports:
+        - containerPort: 3000

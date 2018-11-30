@@ -1,0 +1,36 @@
+@import '../base/tachyons/variables';
+
+.feature-graphic {
+  width: 100%;
+  height: auto;
+}
+
+.blue-accent-line {
+  width: 200px;
+  height: 10px;
+}
+
+.cover-bg {
+  background-repeat: no-repeat;
+  background-position: center center;
+  //background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@media #{$breakpoint-not-small}{
+  .feature-graphic {
+    max-width: 360px;
+    max-height: 340px;
+  }
+}
+
+@media #{$breakpoint-medium} {
+
+}
+
+@media #{$breakpoint-large} {
+
+}

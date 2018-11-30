@@ -1,0 +1,9 @@
+{{ $hash := .hash }}
+<div class="flex relative z-1 {{ .css }}">
+  <a href="https://play.google.com/store/apps/details?id=com.rchain.rsong&hl=en_US" target="_blank" class="link bn">
+    <img class="w-auto pr2" style="height: 74px" src='/images/{{ index $hash "google-play-badge.png" }}' />
+  </a>
+  <a href="https://testflight.apple.com/join/fuoUfmZf" target="_blank" class="link bn">
+    <img class="w-auto" style="height: 74px" src='/images/{{ index $hash "apple-download-badge.png" }}' />
+  </a>
+</div>

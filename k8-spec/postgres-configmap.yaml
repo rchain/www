@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-config
+  labels:
+    app: postgres
+data:
+  POSTGRES_DB: XXXXXXXXXXXX
+  POSTGRES_USER: XXXXXXXXXXXX
+  POSTGRES_PASSWORD: xxxxxxxxxxxx
+  DB_URL: "postgresql://USER-NAME:PASSWORD@postgres:5432/DB_NAME"

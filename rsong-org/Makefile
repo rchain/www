@@ -1,0 +1,36 @@
+##
+## rsong-org
+## create and publishes rsong.org docker image
+##
+
+VERSION=1.0
+APP_NAME=rsong-org
+IMAGE=$(DOCKER_USER)/$(APP_NAME)
+TAG=$(VERSION)-$(SHAW)
+
+BIN=node_modules/.bin
+GULP=$(BIN)/gulp
+
+login:
+	@docker login -u "$(DOCKER_USER)" -p "$(DOCKER_PASS)"
+
+install: login
+	$(NODE) npm install 
+
+build: install
+	$(NODE) $(GULP) 
+dist: build
+	$(BIN)/hugo
+
+build_image:  dist
+	docker build -t $(IMAGE) .
+
+tag_image: build_image
+	docker tag $(IMAGE)  $(IMAGE):$(TAG)
+	docker tag $(IMAGE) $(IMAGE):latest
+
+publish: tag_image
+	docker push $(IMAGE):$(TAG)
+	docker push $(IMAGE):latest
+
+.DEFAULT_GOAL :=publish

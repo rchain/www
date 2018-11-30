@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics  -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-89148892-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-89148892-2');
+
+    </script>
+    <script type="text/javascript" src="https://rchain.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/b4ichp/b/2/a44af77267a987a660377e5c46e0fb64/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=16b975c9"></script>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <title>{{title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+    <meta name="google-site-verification" content="NvXu2Qnyi90bS-ubPtaorKKja1_p8SHfQ0zPoqG0sIg" />
+    <link rel='stylesheet' href='/css/layout.css' />
+    <link rel='stylesheet' href='/css/{{style}}.css' />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/favicon-red.png" />
+    <meta property="og:title" content="{{ogtitle}}" />
+    <meta property="og:type" content="website" />
+    <meta name="description" content="{{ogdescription}}" />
+    <meta property="og:description" content="{{ogdescription}}" />
+    <meta property="og:url" content="{{ogurl}}" />
+    <meta property="og:image" content="{{ogimg}}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ogtitle}}" />
+    <meta name="twitter:image" content="{{ogimg}}" />
+    <meta name="twitter:url" content="{{ogurl}}" />
+    <meta name="twitter:description" content="{{ogdescription}}" />
+
+</head>
+
+<body>
+    <div id="navOpen" onclick="navOpen()">
+        <div class="burger"></div>
+        <div class="burger"></div>
+        <div class="burger"></div>
+    </div>
+    <div class="nav" id="nav">
+        <div id="navClose" onclick="navClose()">X</div>
+        <div class="item" onclick="">
+            <a href="/">Home</a>
+        </div>
+        <div class="item" onclick="">
+            <a href="/documentation">Documentation</a>
+        </div>
+        <div class="item" onclick="">
+            <a href="/faq">FAQ</a>
+        </div>
+        <div class="item" onclick="">
+            <a href="/conference">Conference</a>
+        </div>
+        <div class="item" onclick="">
+            <a href="/token-swap">REV Issuance</a>
+        </div>
+        <div class="item" onclick="">
+            <a href="https://forum.rchain.coop" target="_blank">Forum</a>
+        </div>
+        <div class="item" onclick="">
+            <a href="https://rchain.coop" target="_blank">Rchain.Coop</a>
+        </div>
+    </div>
+
+    {{{body}}}
+
+    <div id="footer">
+        <div class="footer-social">
+            <ul>
+                <li><a href="https://www.facebook.com/rchaincooperative/" target="_blank"><img src="/assets/fb-circle.png"><span class="socialText">Facebook</span></a></li>
+                <li><a href="https://twitter.com/rchain_coop" target="_blank"><img src="/assets/twitter-circle2.png"><span class="socialText">Twitter</span></a></li>
+                <li><a href="https://github.com/rchain" target="_blank"><img src="/assets/github-circle.png"><span class="socialText">Github</span></a></li>
+                <li><a href="https://medium.com/rchain-cooperative" target="_blank"><img src="/assets/medium-circle.png"><span class="socialText">Medium</span></a></li>
+                <li><a href="https://www.reddit.com/r/RChain/" target="_blank"><img src="/assets/reddit-circle2.png"><span class="socialText">Reddit</span></a></li>
+                <li><a href="https://t.me/rchain_coop" target="_blank"><img src="/assets/telegram2.png"><span class="socialText">Telegram</span></a></li>
+                <li><a href="https://discord.gg/fvY8qhx" target="_blank"><img src="/assets/discord-circle.png"><span class="socialText">Discord</span></a></li>
+                <li><a href="https://www.youtube.com/channel/UCSS3jCffMiz574_q64Ukj_w" target="_blank"><img src="/assets/youtube-circle.png"><span class="socialText">Youtube</span></a></li>
+                <li><a href="https://www.linkedin.com/company/rchain-cooperative/" target="_blank"><img src="/assets/linkedin-circle.png"><span class="socialText">Linkedin</span></a></li>
+            </ul>
+        </div>
+        <script src="//static-login.sendpulse.com/apps/fc3/build/loader.js" sp-form-id="d9c627af9e0598b92ed716d55b927bf9435993888140ff8d40a3c06a0ad31454"></script>
+
+        <div class="copy">© 2018 RChain Cooperative</div>
+    </div>
+
+    <script src="/js/developer.rchain.js"></script>
+    <script src="{{ scripts }}"></script>
+
+</body>
+
+</html>

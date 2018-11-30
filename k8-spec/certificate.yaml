@@ -1,0 +1,20 @@
+---
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: letsencrypt-staging-tls
+  namespace: rchain-coop
+spec:
+  secretName: letsencrypt-staging-tls
+  dnsNames:
+  - rchain-coop.tk
+  acme:
+    config:
+    - http01:
+        ingressClass: rchain-coop
+      domains:
+      - rchain-coop.tk
+  issuerRef:
+    name: letsencrypt-staging
+    kind: Issuer
+    
