@@ -5,9 +5,9 @@ metadata:
   name: postgres-config
   labels:
     app: postgres
+    
 data:
-  POSTGRES_DB: crypto_flash
-  PGUSER: crypto_flash
-  PGPASSWORD: n04pC01xUEol9wjlIfzQ
-  POSTGRES_PASSWORD: n04pC01xUEol9wjlIfzQ
-  DB_URL: "postgresql://crypto_flash:n04pC01xUEol9wjlIfzQ@postgres:5432/crypto_flash
+  PGUSER: {{ pg-user }}
+  PGPASSWORD: {{ pg-password }}
+  PGDB: {{ pg-database }}
+  DB_URL: "postgresql://{{ pg-user }}:{{ pg-password }}:5432/{{ pg-database }}
