@@ -106,6 +106,9 @@ router.get('/events', function (req, res) {
 router.get('/blog',  (req, res, next) => {  
     res.redirect(301, 'https://blog.rchain.coop/');
 });
+router.get('/healthz', function(req, res) {
+    res.send('healthy')
+})
 
 /* POST Newsletter signup. */
 router.post('/newsletter-submission', function (req, res) {

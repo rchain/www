@@ -11,6 +11,10 @@ const Web3 = require('web3');
 const web3 = new Web3('http://localhost:3000');
 const nodemailer = require('nodemailer');
 
+// k8 health check. 
+router.get('/healthz', function(req, res) {
+    res.send('healthy')
+});
 
 /* GET Home page. */
 router.get('/', function (req, res) {
