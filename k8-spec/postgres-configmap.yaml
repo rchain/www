@@ -6,7 +6,8 @@ metadata:
   labels:
     app: postgres
 data:
-  POSTGRES_DB: XXXXXXXXXXXX
-  POSTGRES_USER: XXXXXXXXXXXX
-  POSTGRES_PASSWORD: xxxxxxxxxxxx
-  DB_URL: "postgresql://USER-NAME:PASSWORD@postgres:5432/DB_NAME"
+  POSTGRES_DB: crypto_flash
+  PGUSER: crypto_flash
+  PGPASSWORD: n04pC01xUEol9wjlIfzQ
+  POSTGRES_PASSWORD: n04pC01xUEol9wjlIfzQ
+  DB_URL: "postgresql://crypto_flash:n04pC01xUEol9wjlIfzQ@postgres:5432/crypto_flash

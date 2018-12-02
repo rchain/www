@@ -11,7 +11,8 @@ services:
     restart: always
     environment:
       POSTGRES_PASSWORD: password
-      POSTGRES_USER:  crypto_flash
+      PGPASSWORD: assman123
+      PGUSER:  assman
 
   adminer:
     image: adminer

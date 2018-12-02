@@ -1,3 +1,4 @@
+
 --
 -- PostgreSQL database dump
 --
@@ -17,7 +18,10 @@ SET row_security = off;
 --
 -- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
 --
-
+CREATE USER crypto_flash with password 'n04pC01xUEol9wjlIfzQ';
+CREATE database crypto_flash;
+GRANT ALL PRIVILEGES ON DATABASE "crypto_flash" to crypto_fash
+\c crypto_flash;
 CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
@@ -33,7 +37,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: eth_data; Type: TABLE; Schema: public; Owner: admin
+-- Name: eth_data; Type: TABLE; Schema: public; Owner: crypto_flash
 --
 
 CREATE TABLE public.eth_data (
@@ -45,10 +49,10 @@ CREATE TABLE public.eth_data (
 );
 
 
-ALTER TABLE public.eth_data OWNER TO admin;
+ALTER TABLE public.eth_data OWNER TO crypto_flash;
 
 --
--- Name: inv_items; Type: TABLE; Schema: public; Owner: admin
+-- Name: inv_items; Type: TABLE; Schema: public; Owner: crypto_flash
 --
 
 CREATE TABLE public.inv_items (
@@ -60,10 +64,10 @@ CREATE TABLE public.inv_items (
 );
 
 
-ALTER TABLE public.inv_items OWNER TO admin;
+ALTER TABLE public.inv_items OWNER TO crypto_flash;
 
 --
--- Name: inv_items_item_id_seq; Type: SEQUENCE; Schema: public; Owner: admin
+-- Name: inv_items_item_id_seq; Type: SEQUENCE; Schema: public; Owner: crypto_flash
 --
 
 CREATE SEQUENCE public.inv_items_item_id_seq
@@ -74,17 +78,17 @@ CREATE SEQUENCE public.inv_items_item_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.inv_items_item_id_seq OWNER TO admin;
+ALTER TABLE public.inv_items_item_id_seq OWNER TO crypto_flash;
 
 --
--- Name: inv_items_item_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: admin
+-- Name: inv_items_item_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: crypto_flash
 --
 
 ALTER SEQUENCE public.inv_items_item_id_seq OWNED BY public.inv_items.item_id;
 
 
 --
--- Name: invoices; Type: TABLE; Schema: public; Owner: admin
+-- Name: invoices; Type: TABLE; Schema: public; Owner: crypto_flash
 --
 
 CREATE TABLE public.invoices (
@@ -101,10 +105,10 @@ CREATE TABLE public.invoices (
 );
 
 
-ALTER TABLE public.invoices OWNER TO admin;
+ALTER TABLE public.invoices OWNER TO crypto_flash;
 
 --
--- Name: invoices_eth_id_seq; Type: SEQUENCE; Schema: public; Owner: admin
+-- Name: invoices_eth_id_seq; Type: SEQUENCE; Schema: public; Owner: crypto_flash
 --
 
 CREATE SEQUENCE public.invoices_eth_id_seq
@@ -115,17 +119,17 @@ CREATE SEQUENCE public.invoices_eth_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.invoices_eth_id_seq OWNER TO admin;
+ALTER TABLE public.invoices_eth_id_seq OWNER TO crypto_flash;
 
 --
--- Name: invoices_eth_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: admin
+-- Name: invoices_eth_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: crypto_flash
 --
 
 ALTER SEQUENCE public.invoices_eth_id_seq OWNED BY public.invoices.eth_id;
 
 
 --
--- Name: invoices_invoice_id_seq; Type: SEQUENCE; Schema: public; Owner: admin
+-- Name: invoices_invoice_id_seq; Type: SEQUENCE; Schema: public; Owner: crypto_flash
 --
 
 CREATE SEQUENCE public.invoices_invoice_id_seq
@@ -136,17 +140,17 @@ CREATE SEQUENCE public.invoices_invoice_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.invoices_invoice_id_seq OWNER TO admin;
+ALTER TABLE public.invoices_invoice_id_seq OWNER TO crypto_flash;
 
 --
--- Name: invoices_invoice_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: admin
+-- Name: invoices_invoice_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: crypto_flash
 --
 
 ALTER SEQUENCE public.invoices_invoice_id_seq OWNED BY public.invoices.invoice_id;
 
 
 --
--- Name: refund_data; Type: TABLE; Schema: public; Owner: admin
+-- Name: refund_data; Type: TABLE; Schema: public; Owner: crypto_flash
 --
 
 CREATE TABLE public.refund_data (
@@ -159,10 +163,10 @@ CREATE TABLE public.refund_data (
 );
 
 
-ALTER TABLE public.refund_data OWNER TO admin;
+ALTER TABLE public.refund_data OWNER TO crypto_flash;
 
 --
--- Name: sku_details; Type: TABLE; Schema: public; Owner: admin
+-- Name: sku_details; Type: TABLE; Schema: public; Owner: crypto_flash
 --
 
 CREATE TABLE public.sku_details (
@@ -171,31 +175,31 @@ CREATE TABLE public.sku_details (
 );
 
 
-ALTER TABLE public.sku_details OWNER TO admin;
+ALTER TABLE public.sku_details OWNER TO crypto_flash;
 
 --
--- Name: item_id; Type: DEFAULT; Schema: public; Owner: admin
+-- Name: item_id; Type: DEFAULT; Schema: public; Owner: crypto_flash
 --
 
 ALTER TABLE ONLY public.inv_items ALTER COLUMN item_id SET DEFAULT nextval('public.inv_items_item_id_seq'::regclass);
 
 
 --
--- Name: invoice_id; Type: DEFAULT; Schema: public; Owner: admin
+-- Name: invoice_id; Type: DEFAULT; Schema: public; Owner: crypto_flash
 --
 
 ALTER TABLE ONLY public.invoices ALTER COLUMN invoice_id SET DEFAULT nextval('public.invoices_invoice_id_seq'::regclass);
 
 
 --
--- Name: eth_id; Type: DEFAULT; Schema: public; Owner: admin
+-- Name: eth_id; Type: DEFAULT; Schema: public; Owner: crypto_flash
 --
 
 ALTER TABLE ONLY public.invoices ALTER COLUMN eth_id SET DEFAULT nextval('public.invoices_eth_id_seq'::regclass);
 
 
 --
--- Data for Name: eth_data; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: eth_data; Type: TABLE DATA; Schema: public; Owner: crypto_flash
 --
 
 COPY public.eth_data (eth_id, pub_key, priv_key, txn_id, account_balance) FROM stdin;
@@ -474,7 +478,7 @@ COPY public.eth_data (eth_id, pub_key, priv_key, txn_id, account_balance) FROM s
 
 
 --
--- Data for Name: inv_items; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: inv_items; Type: TABLE DATA; Schema: public; Owner: crypto_flash
 --
 
 COPY public.inv_items (item_id, general, student, price, invoice_id) FROM stdin;
@@ -753,14 +757,14 @@ COPY public.inv_items (item_id, general, student, price, invoice_id) FROM stdin;
 
 
 --
--- Name: inv_items_item_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
+-- Name: inv_items_item_id_seq; Type: SEQUENCE SET; Schema: public; Owner: crypto_flash
 --
 
 SELECT pg_catalog.setval('public.inv_items_item_id_seq', 271, true);
 
 
 --
--- Data for Name: invoices; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: invoices; Type: TABLE DATA; Schema: public; Owner: crypto_flash
 --
 
 COPY public.invoices (invoice_id, balance_due, eth_id, discount_code, date_created, active, discount_sent, refund_requested, email, uid) FROM stdin;
@@ -1039,21 +1043,21 @@ COPY public.invoices (invoice_id, balance_due, eth_id, discount_code, date_creat
 
 
 --
--- Name: invoices_eth_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
+-- Name: invoices_eth_id_seq; Type: SEQUENCE SET; Schema: public; Owner: crypto_flash
 --
 
 SELECT pg_catalog.setval('public.invoices_eth_id_seq', 271, true);
 
 
 --
--- Name: invoices_invoice_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
+-- Name: invoices_invoice_id_seq; Type: SEQUENCE SET; Schema: public; Owner: crypto_flash
 --
 
 SELECT pg_catalog.setval('public.invoices_invoice_id_seq', 271, true);
 
 
 --
--- Data for Name: refund_data; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: refund_data; Type: TABLE DATA; Schema: public; Owner: crypto_flash
 --
 
 COPY public.refund_data (uid, user_pub_key, email, date_created, balance_returned, txn_id) FROM stdin;
@@ -1061,7 +1065,7 @@ COPY public.refund_data (uid, user_pub_key, email, date_created, balance_returne
 
 
 --
--- Data for Name: sku_details; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: sku_details; Type: TABLE DATA; Schema: public; Owner: crypto_flash
 --
 
 COPY public.sku_details (general, student) FROM stdin;
@@ -1070,7 +1074,7 @@ COPY public.sku_details (general, student) FROM stdin;
 
 
 --
--- Name: eth_data_pkey; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: eth_data_pkey; Type: CONSTRAINT; Schema: public; Owner: crypto_flash
 --
 
 ALTER TABLE ONLY public.eth_data
@@ -1078,7 +1082,7 @@ ALTER TABLE ONLY public.eth_data
 
 
 --
--- Name: eth_data_priv_key_key; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: eth_data_priv_key_key; Type: CONSTRAINT; Schema: public; Owner: crypto_flash
 --
 
 ALTER TABLE ONLY public.eth_data
@@ -1086,7 +1090,7 @@ ALTER TABLE ONLY public.eth_data
 
 
 --
--- Name: eth_data_pub_key_key; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: eth_data_pub_key_key; Type: CONSTRAINT; Schema: public; Owner: crypto_flash
 --
 
 ALTER TABLE ONLY public.eth_data
@@ -1094,7 +1098,7 @@ ALTER TABLE ONLY public.eth_data
 
 
 --
--- Name: eth_data_txn_id_key; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: eth_data_txn_id_key; Type: CONSTRAINT; Schema: public; Owner: crypto_flash
 --
 
 ALTER TABLE ONLY public.eth_data
@@ -1102,7 +1106,7 @@ ALTER TABLE ONLY public.eth_data
 
 
 --
--- Name: inv_items_pkey; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: inv_items_pkey; Type: CONSTRAINT; Schema: public; Owner: crypto_flash
 --
 
 ALTER TABLE ONLY public.inv_items
@@ -1110,7 +1114,7 @@ ALTER TABLE ONLY public.inv_items
 
 
 --
--- Name: invoices_eth_id_key; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: invoices_eth_id_key; Type: CONSTRAINT; Schema: public; Owner: crypto_flash
 --
 
 ALTER TABLE ONLY public.invoices
@@ -1118,7 +1122,7 @@ ALTER TABLE ONLY public.invoices
 
 
 --
--- Name: invoices_pkey; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: invoices_pkey; Type: CONSTRAINT; Schema: public; Owner: crypto_flash
 --
 
 ALTER TABLE ONLY public.invoices
@@ -1126,7 +1130,7 @@ ALTER TABLE ONLY public.invoices
 
 
 --
--- Name: invoices_uid_key; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: invoices_uid_key; Type: CONSTRAINT; Schema: public; Owner: crypto_flash
 --
 
 ALTER TABLE ONLY public.invoices
@@ -1134,7 +1138,7 @@ ALTER TABLE ONLY public.invoices
 
 
 --
--- Name: refund_data_txn_id_key; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: refund_data_txn_id_key; Type: CONSTRAINT; Schema: public; Owner: crypto_flash
 --
 
 ALTER TABLE ONLY public.refund_data
@@ -1142,7 +1146,7 @@ ALTER TABLE ONLY public.refund_data
 
 
 --
--- Name: refund_data_uid_key; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: refund_data_uid_key; Type: CONSTRAINT; Schema: public; Owner: crypto_flash
 --
 
 ALTER TABLE ONLY public.refund_data
@@ -1150,7 +1154,7 @@ ALTER TABLE ONLY public.refund_data
 
 
 --
--- Name: refund_data_user_pub_key_key; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: refund_data_user_pub_key_key; Type: CONSTRAINT; Schema: public; Owner: crypto_flash
 --
 
 ALTER TABLE ONLY public.refund_data
@@ -1158,7 +1162,7 @@ ALTER TABLE ONLY public.refund_data
 
 
 --
--- Name: eth_data_eth_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: admin
+-- Name: eth_data_eth_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: crypto_flash
 --
 
 ALTER TABLE ONLY public.eth_data
@@ -1166,7 +1170,7 @@ ALTER TABLE ONLY public.eth_data
 
 
 --
--- Name: inv_items_invoice_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: admin
+-- Name: inv_items_invoice_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: crypto_flash
 --
 
 ALTER TABLE ONLY public.inv_items
