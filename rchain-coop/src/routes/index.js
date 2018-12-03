@@ -103,9 +103,11 @@ router.get('/events', function (req, res) {
     res.redirect('https://developer.rchain.coop/conference');
 });
 
-router.get('/blog',  (req, res, next) => {  
-    res.redirect(301, 'https://blog.rchain.coop/');
-});
+
+// router.get('/blog',  (req, res, next) => {  
+//     res.redirect(301, 'https://blog.rchain.coop/');
+// });
+
 router.get('/healthz', function(req, res) {
     res.send('healthy')
 })
