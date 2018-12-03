@@ -4,7 +4,7 @@
 ##
 
 VERSION=1.0
-APP_NAME=rchain.coop
+APP_NAME=rchain-coop
 IMAGE=$(DOCKER_USER)/$(APP_NAME)
 TAG=$(VERSION)-$(SHAW)
 

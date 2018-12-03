@@ -16,18 +16,18 @@ spec:
     spec:
       containers:
       - name: rchain-coop
-        image: kayvank/rchain.coop:1.0-94e93f6
+        image: kayvank/rchain.coop:1.0-9869f8a
         ports:
         - containerPort: 3000
         livenessProbe:
           httpGet:
             path: /healthz
             port: 3000
-          initialDelaySeconds: 5
+          initialDelaySeconds: 4
           timeoutSeconds: 2
         readinessProbe:
           httpGet:
             path: /healthz
             port: 3000
-          initialDelaySeconds: 5
+          initialDelaySeconds: 4
           periodSeconds: 2
