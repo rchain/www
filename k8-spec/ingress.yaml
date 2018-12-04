@@ -7,20 +7,23 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: gce
     kubernetes.io/ingress.global-static-ip-name: www-rchain-coop
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
   - host: rchain-coop.tk
     http:
       paths:
-        - path: /blog/*
-          backend:
+        - backend:
+            serviceName: rchain-coop
+            servicePort: 3000
+
+  - host: blog-rchain-coop.tk
+    http:
+      paths:
+        - backend:
             serviceName: wordpress
             servicePort: 80
 
-        - path: /*
-          backend:
-            serviceName: rchain-coop
-            servicePort: 3000
   - host: developer-rchain-coop.tk
     http:
       paths:
@@ -34,3 +37,10 @@ spec:
         - backend:
             serviceName: rsong-org
             servicePort: 80
+
+  - host: wpdb-rchain-coop.tk
+    http:
+      paths:
+        - backend:
+            serviceName: db-adminer
+            servicePort: 8080

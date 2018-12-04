@@ -1,0 +1,33 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: db-adminer
+  namespace: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db-adminer
+  template:
+    metadata:
+      labels:
+        app: db-adminer
+    spec:
+      containers:
+      - name: db-adminer
+        image: adminer:4.7
+        ports:
+        - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 1
+          timeoutSeconds: 1
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 1
+          periodSeconds: 1
