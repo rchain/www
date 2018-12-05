@@ -4,11 +4,13 @@ kind: Service
 metadata:
   name: postgres
   labels:
-    app: postgres
+    app: developer-rchain-coop
 spec:
   ports:
-   - port: 5432
-     protocol: TCP
-     targetPort: 5432
+    - port: 5432
+      protocol: TCP
+      targetPort: 5432
   selector:
-    app: postgres
+    app: developer-rchain-coop
+    tier: postgres
+

@@ -47,3 +47,7 @@ kubectl get svc
 
 echo "enable services"
 gcloud services enable cloudbuild.googleapis.com
+
+echo installing helm
+helm init --service-account tiller --upgrade
+helm install --name cert-manager --namespace kube-system stable/cert-manager

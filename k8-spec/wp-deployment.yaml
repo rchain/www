@@ -38,16 +38,16 @@ spec:
 
         livenessProbe:
           httpGet:
-            path: /
+            path: /wp-admin/install.php
             port: 80
-          initialDelaySeconds: 7
-          timeoutSeconds: 2
+          initialDelaySeconds: 3
+          timeoutSeconds: 1
         readinessProbe:
           httpGet:
-            path: /
+            path: /wp-admin/install.php
             port: 80
-          initialDelaySeconds: 5
-          periodSeconds: 2
+          initialDelaySeconds: 3
+          periodSeconds: 1
 
       volumes:
       - name: wordpress-persistent-storage

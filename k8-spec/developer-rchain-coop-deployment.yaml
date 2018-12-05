@@ -23,7 +23,6 @@ spec:
           - configMapRef:
               name: postgres-config
         livenessProbe:
-          # an http probe
           httpGet:
             path: /healthz
             port: 3000

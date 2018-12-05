@@ -7,6 +7,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: gce
     kubernetes.io/ingress.global-static-ip-name: www-rchain-coop
+    certmanager.k8s.io/cluster-issuer: rchain-coop-staging
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
@@ -44,3 +45,11 @@ spec:
         - backend:
             serviceName: db-adminer
             servicePort: 8080
+
+  tls:
+  - hosts:
+      - rchain-coop.tk
+      - blog-rchain-coop.tk
+      - developer-rchain-coop.tk
+      - rsong.cf
+    secretName: tls-secret-staging

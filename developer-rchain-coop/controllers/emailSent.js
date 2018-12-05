@@ -1,24 +1,10 @@
-const pg = require('pg');
-
-
-
-//******************************************//
-//OPEN A NEW POOL FOR QUERIES
-//******************************************//
-function openNewPool() {
-    const connectionString =  conf.get('db.url');
-    console.log('--- ' + connectionString + '----')
-    return new Pool({
-        connectionString: connectionString,
-    })
-}
-
+const db = require('../controllers/db')
 
 //***************************************************//
 //UPDATE DATABASE ONCE DISCOUNT EMAIL IS SENT
 //***************************************************//
 function updateEmailSent(uid) {
-    let pool = openNewPool();
+    let pool = db.connection.INSTANCE();
     let sql = "UPDATE invoices SET discount_sent = true WHERE uid = '" + uid + "';";
 
     pool.query(sql, (err, res) => {
