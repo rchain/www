@@ -8,6 +8,7 @@
   "dependencies": {
     "babel-plugin-typecheck": "^3.9.0",
     "babel-preset-env": "^1.7.0",
+    "convict": "^4.4.0",
     "cookie-parser": "^1.4.3",
     "debug": "^2.6.9",
     "express": "^4.16.4",

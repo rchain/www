@@ -7,7 +7,8 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: gce
     kubernetes.io/ingress.global-static-ip-name: www-rchain-coop
-    certmanager.k8s.io/cluster-issuer: rchain-coop-staging
+    certmanager.k8s.io/cluster-issuer: rchain-coop
+    ingress.kubernetes.io/force-ssl-redirect: "true"
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
@@ -52,4 +53,4 @@ spec:
       - blog-rchain-coop.tk
       - developer-rchain-coop.tk
       - rsong.cf
-    secretName: tls-secret-staging
+    secretName: tls-secret

@@ -2,10 +2,10 @@
 apiVersion: certmanager.k8s.io/v1alpha1
 kind: Certificate
 metadata:
-  name: rchain-coop
+  name: rchain-coop-staging
   namespace: dev
 spec:
-  secretName: tls-secret
+  secretName: tls-secret-staging
   dnsNames:
   - rchain-coop.tk
   acme:
@@ -15,6 +15,6 @@ spec:
       domains:
       - rchain-coop.tk
   issuerRef:
-    name: rchain-coop
+    name: rchain-coop-staging
     kind: ClusterIssuer
     

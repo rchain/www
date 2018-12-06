@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
+const conf = require('../conf.js')
 const newsletter = require('../controllers/newsletter.js');
 
+const selfUrl= conf.get('url.self')
 
 router.get('/', function (req, res) {
     res.render('index', {
@@ -9,7 +11,7 @@ router.get('/', function (req, res) {
         style: 'index',
         ogtitle: 'RChain',
         ogdescription: "",
-        ogurl: 'https://rchain.coop/',
+        ogurl: conf.get('url.self'),
         ogimg: '',
         scripts: '/js/homepage_Browser.js'
     });
@@ -22,7 +24,7 @@ router.get('/get-started', function (req, res) {
         style: 'get-started',
         ogtitle: 'RChain',
         ogdescription: "",
-        ogurl: 'https://rchain.coop/get-started',
+        ogurl: selfUrl+'/get-started',
         ogimg: '',
         scripts: '/js/get-started_Browser.js'
     });
@@ -34,7 +36,7 @@ router.get('/platform', function (req, res) {
         style: 'platform',
         ogtitle: 'rchain platform',
         ogdescription: "",
-        ogurl: 'https://rchain.coop/platform',
+        ogurl: selfUrl + '/platform',
         ogimg: '',
         scripts: ''
     });
@@ -46,7 +48,7 @@ router.get('/learn-rholang', function (req, res) {
         style: 'learn-rholang',
         ogtitle: 'Learn Rholang',
         ogdescription: "",
-        ogurl: 'https://rchain.coop/platform',
+        ogurl: selfUrl + '/platform',
         ogimg: '',
         scripts: '/js/learn-rholang_Browser.js'
     });
@@ -58,7 +60,7 @@ router.get('/community', function (req, res) {
         style: 'community',
         ogtitle: 'RChain Community',
         ogdescription: "",
-        ogurl: 'https://rchain.coop/community',
+        ogurl: selfUrl + '/community',
         ogimg: '',
         scripts: ''
     });
@@ -70,7 +72,7 @@ router.get('/team', function (req, res) {
         style: 'team',
         ogtitle: 'RChain Team',
         ogdescription: "",
-        ogurl: 'https://rchain.coop/team',
+        ogurl: selfUrl + '/team',
         ogimg: '',
         scripts: ''
     });
@@ -100,12 +102,12 @@ router.get('/portfolio', function (req, res) {
 });
 
 router.get('/events', function (req, res) {
-    res.redirect('https://developer.rchain.coop/conference');
+    res.redirect(301,conf.get('url.developer'))
 });
 
 
 router.get('/blog',  (req, res, next) => {  
-    res.redirect(301, 'http://blog-rchain-coop.tk/');
+    res.redirect(301, conf.get('url.blog'))
 });
 
 router.get('/healthz', function(req, res) {

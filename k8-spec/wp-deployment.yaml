@@ -38,13 +38,13 @@ spec:
 
         livenessProbe:
           httpGet:
-            path: /wp-admin/install.php
+            path: /readme.html
             port: 80
           initialDelaySeconds: 3
           timeoutSeconds: 1
         readinessProbe:
           httpGet:
-            path: /wp-admin/install.php
+            path: /readme.html
             port: 80
           initialDelaySeconds: 3
           periodSeconds: 1
