@@ -16,6 +16,35 @@ metadata:
     nginx.kubernetes.io/ingress.allow-http: "false"
 spec:
   rules:
+
+  - host: rchain-coop.tk
+    http:
+      paths:
+        - backend:
+            serviceName: rchain-coop
+            servicePort: 3000
+
+  - host: blog-rchain-coop.tk
+    http:
+      paths:
+        - backend:
+            serviceName: wordpress
+            servicePort: 80
+
+  - host: developer-rchain-coop.tk
+    http:
+      paths:
+        - backend:
+            serviceName: developer-rchain-coop
+            servicePort: 3000
+
+  - host: rsong.cf
+    http:
+      paths:
+        - backend:
+            serviceName: rsong-org
+            servicePort: 80
+
   - host: rchain.coop
     http:
       paths:
@@ -57,4 +86,8 @@ spec:
       - blog.rchain.coop
       - developer.rchain.coop
       - rsong.org
+      - rchain-coop.tk
+      - blog-rchain-coop.tk
+      - developer-rchain-coop.tk
+      - rsong.cf
     secretName: tls-secret
