@@ -6,14 +6,21 @@ metadata:
   namespace: dev
 spec:
   secretName: tls-secret
+  commonName: rchain-coop.tk
   dnsNames:
-  - rchain-coop.tk
+    - rchain-coop.tk
+    - developer-rchain-coop.tk
+    - blog-rchain-coop.tk
+    - rsong.cf
   acme:
     config:
     - http01:
         ingress: rchain-coop
       domains:
       - rchain-coop.tk
+      - developer-rchain-coop.tk
+      - blog-rchain-coop.tk
+      - rsong.cf
   issuerRef:
     name: rchain-coop
     kind: ClusterIssuer

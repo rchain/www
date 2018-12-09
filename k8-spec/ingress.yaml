@@ -5,11 +5,13 @@ metadata:
   name: rchain-coop
   namespace: dev
   annotations:
-    kubernetes.io/ingress.class: gce
     kubernetes.io/ingress.global-static-ip-name: www-rchain-coop
     certmanager.k8s.io/cluster-issuer: rchain-coop
-    ingress.kubernetes.io/force-ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+    ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/tls-acme: 'true'
 spec:
   rules:
   - host: rchain-coop.tk
@@ -52,5 +54,5 @@ spec:
       - rchain-coop.tk
       - blog-rchain-coop.tk
       - developer-rchain-coop.tk
-      - rsong.cf
+      - rsong-cf
     secretName: tls-secret
