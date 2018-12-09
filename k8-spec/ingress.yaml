@@ -12,30 +12,32 @@ metadata:
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/tls-acme: 'true'
+    kubernetes.io/ingress.allow-http: "false"
+    nginx.kubernetes.io/ingress.allow-http: "false"
 spec:
   rules:
-  - host: rchain-coop.tk
+  - host: rchain.coop
     http:
       paths:
         - backend:
             serviceName: rchain-coop
             servicePort: 3000
 
-  - host: blog-rchain-coop.tk
+  - host: blog.rchain.coop
     http:
       paths:
         - backend:
             serviceName: wordpress
             servicePort: 80
 
-  - host: developer-rchain-coop.tk
+  - host: developer.rchain.coop
     http:
       paths:
         - backend:
             serviceName: developer-rchain-coop
             servicePort: 3000
 
-  - host: rsong.cf
+  - host: rsong.org
     http:
       paths:
         - backend:
@@ -51,8 +53,8 @@ spec:
 
   tls:
   - hosts:
-      - rchain-coop.tk
-      - blog-rchain-coop.tk
-      - developer-rchain-coop.tk
-      - rsong-cf
+      - rchain.coop
+      - blog.rchain.coop
+      - developer.rchain.coop
+      - rsong.org
     secretName: tls-secret
