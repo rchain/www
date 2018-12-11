@@ -5,7 +5,7 @@ const conf  = convict( {
             self: {
                 doc: 'rchain coop self. this is a bad idea and needs to be removed post migration',
                 env:  'RCHAIN_COOP_URL' ,
-                default: 'https://blog.rchain.coop'
+                default: 'https://rchain.coop'
             },
             blog: {
                 doc: 'rchain blog url',

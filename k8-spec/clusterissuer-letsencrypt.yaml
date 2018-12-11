@@ -8,5 +8,5 @@ spec:
     server: https://acme-v02.api.letsencrypt.org/directory
     email: kayvan.kazeminejad@rchain.coop
     privateKeySecretRef:
-      name: tls-letsencrypt
+      name: tls-letsencrypt-rchain-coop
     http01: {}

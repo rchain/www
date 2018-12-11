@@ -101,13 +101,13 @@ router.get('/portfolio', function (req, res) {
     });
 });
 
-router.get('/events', function (req, res) {
-    res.redirect(301,conf.get('url.developer'))
+router.get('/events/:r', function (req, res) {
+    res.redirect(301,conf.get('url.blog') + '/' + req.params.r)
 });
 
 
-router.get('/blog',  (req, res, next) => {  
-    res.redirect(301, conf.get('url.blog'))
+router.get('/blog/:r',  (req, res, next) => {  
+    res.redirect(301, conf.get('url.blog') +'/' + req.params.r)
 });
 
 router.get('/healthz', function(req, res) {

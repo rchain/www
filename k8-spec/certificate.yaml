@@ -5,21 +5,25 @@ metadata:
   name: rchain-coop
   namespace: dev
 spec:
-  secretName: tls-letsencrypt
-  commonName: rchain-coop
+  secretName: tls-letsencrypt-rchain-coop
+  commonName: rchain.coop
   dnsNames:
     - rchain.coop
     - www.rchain.coop
     - developer.rchain.coop
-    - www.developer.rchain.coop
     - blog.rchain.coop
-    - www.blog.rchain.coop
   acme:
     config:
     - http01:
         ingressClass: nginx
       domains:
       - rchain.coop
+
+    # - http01:
+    #     ingressClass: nginx
+    #   domains:
+    #   - www.rchain.coop
+
     - http01:
         ingressClass: nginx
       domains:
