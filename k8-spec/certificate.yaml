@@ -5,50 +5,19 @@ metadata:
   name: rchain-coop
   namespace: dev
 spec:
-  secretName: tls-secret
-  commonName: rchain.coop
+  secretName: tls-letsencrypt
+  commonName: rchain-coop
   dnsNames:
+    - rchain.coop
     - www.rchain.coop
     - developer.rchain.coop
     - www.developer.rchain.coop
     - blog.rchain.coop
     - www.blog.rchain.coop
-    - rsong.org
-    - www.rsong.org
-    - www.rchain-coop.tk
-    - developer-rchain-coop.tk
-    - www.developer-rchain-coop.tk
-    - blog-rchain-coop.tk
-    - www.blog.rchain.coop
-    - rsong.cf
-    - www.rsong.acf
   acme:
     config:
     - http01:
         ingressClass: nginx
-
-
-      domains:
-      - rchain-coop.tk
-    - http01:
-        ingressClass: nginx
-      domains:
-      - developer-rchain-coop.tk
-    - http01:
-        ingressClass: nginx
-      domains:
-      - blog-rchain-coop.tk
-    - http01:
-        ingressClass: nginx
-      domains:
-      - rsong.cf
-    - http01:
-        ingressClass: nginx
-      domains:
-  issuerRef:
-    name: rchain-coop
-    kind: ClusterIssuer
-        
       domains:
       - rchain.coop
     - http01:
@@ -59,13 +28,7 @@ spec:
         ingressClass: nginx
       domains:
       - blog.rchain.coop
-    - http01:
-        ingressClass: nginx
-      domains:
-      - rsong.org
-    - http01:
-        ingressClass: nginx
-      domains:
+
   issuerRef:
     name: rchain-coop
     kind: ClusterIssuer

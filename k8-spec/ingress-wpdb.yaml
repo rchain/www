@@ -1,0 +1,16 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: wordpress-db-adminer
+  namespace: dev
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: wordpress-db-adminer
+spec:
+  rules:
+  - host: wpdb-rchain-coop.tk
+    http:
+      paths:
+        - backend:
+            serviceName: db-adminer
+            servicePort: 8080
