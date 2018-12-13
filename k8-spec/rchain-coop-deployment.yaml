@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: rchain-coop
-        image: kayvank/rchain-coop:1.0-1fff8c5 
+        image: kayvank/rchain-coop:latest
         env:
           - name: SELF_UR
             value: "https://rchain.coop"

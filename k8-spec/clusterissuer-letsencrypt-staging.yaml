@@ -8,5 +8,5 @@ spec:
     server: https://acme-staging-v02.api.letsencrypt.org/directory
     email: kayvan@q2io.com
     privateKeySecretRef:
-      name: tls-secret-staging
+      name: tls-letsencrypt-staging
     http01: {}

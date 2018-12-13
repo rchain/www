@@ -5,7 +5,7 @@ metadata:
   name: rchain-coop
   namespace: dev
   annotations:
-    kubernetes.io/ingress.global-static-ip-name: www-rchain-coop
+    kubernetes.io/ingress.global-static-ip-name: rchain-coop
     # certmanager.k8s.io/cluster-issuer: rchain-coop-prd
     kubernetes.io/ingress.class: nginx
     # ingress.kubernetes.io/ssl-redirect: "true"
@@ -21,14 +21,14 @@ spec:
             serviceName: rchain-coop
             servicePort: 3000
 
-  - host: blog-rchain-coop.tk
+  - host: blog.rchain-coop.tk
     http:
       paths:
         - backend:
             serviceName: wordpress
             servicePort: 80
 
-  - host: developer-rchain-coop.tk
+  - host: developer.rchain-coop.tk
     http:
       paths:
         - backend:
@@ -41,7 +41,7 @@ spec:
             serviceName: developer-rchain-coop
             servicePort: 3000
 
-  - host: wpdb-rchain-coop.tk
+  - host: dbadmin.rchain-coop.tk
     http:
       paths:
         - backend:
