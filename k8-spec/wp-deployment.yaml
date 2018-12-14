@@ -40,14 +40,14 @@ spec:
           httpGet:
             path: /readme.html
             port: 80
-          initialDelaySeconds: 3
-          timeoutSeconds: 1
+          initialDelaySeconds: 5
+          timeoutSeconds: 4
         readinessProbe:
           httpGet:
             path: /readme.html
             port: 80
-          initialDelaySeconds: 3
-          periodSeconds: 1
+          initialDelaySeconds: 5
+          periodSeconds: 4
 
       volumes:
       - name: wordpress-persistent-storage
