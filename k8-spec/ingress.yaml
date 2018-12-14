@@ -7,7 +7,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.global-static-ip-name: rchain-coop
     kubernetes.io/ingress.class: gce
-    # nginx.ingress.kubernetes.io/rewrite-target: /
+    ingress.gcp.kubernetes.io/pre-shared-cert: rchain-coop
     # certmanager.k8s.io/cluster-issuer: rchain-coop
     # kubernetes.io/tls-acme: "true"
 
@@ -78,16 +78,16 @@ spec:
             serviceName: db-adminer
             servicePort: 8080
 
-  # tls:
-  # - hosts:
-  #     - rchain-coop.tk
-  #     - www.rchain-coop.tk
-  #     - developer.rchain-coop.tk
-      # - blog.rchain-coop.tk
-      # - dbadmin.rchain-coop.tk
-  #     - dbadmin.rchain.coop
-  #     - rchain.coop
-  #     - www.rchain.coop
-  #     - developer.rchain.coop
-  #     - blog.rchain.coop
-    # secretName: tls-letsencrypt-staging
+  tls:
+  - hosts:
+      - rchain-coop.tk
+      - www.rchain-coop.tk
+      - developer.rchain-coop.tk
+      - blog.rchain-coop.tk
+      - dbadmin.rchain-coop.tk
+      - rchain.coop
+      - www.rchain.coop
+      - developer.rchain.coop
+      - blog.rchain.coop
+      - dbadmin.rchain.coop
+    secretName: tls-letsencrypt-rchain-coop

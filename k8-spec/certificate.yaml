@@ -5,37 +5,37 @@ metadata:
   name: rchain-coop
   namespace: dev
 spec:
-  secretName: tls-letsencrypt-staging
-  commonName: rchain-coop.tk
+  secretName: tls-letsencrypt-rchain-coop
+  commonName: rchain.coop
   dnsNames:
     - rchain-coop.tk
     - www.rchain-coop.tk
-    # - developer.rchain-coop.tk
-    # - blog.rchain-coop.tk
-    # - dbadmin.rchain-coop.tk
+    - developer.rchain-coop.tk
+    - blog.rchain-coop.tk
+    - dbadmin.rchain-coop.tk
 
-    # - rchain.coop
-    # - www.rchain.coop
-    # - developer.rchain.coop
-    # - blog.rchain.coop
-    # - dbadmin.rchain.coop
+    - rchain.coop
+    - www.rchain.coop
+    - developer.rchain.coop
+    - blog.rchain.coop
+    - dbadmin.rchain.coop
 
   issuerRef:
-    name: rchain-coop-staging
+    name: rchain-coop
     kind: ClusterIssuer
   acme:
     config:
       - http01:
-          ingressClass: gce
+          ingress: rchain-coop
         domains:
         - rchain-coop.tk
         - www.rchain-coop.tk
         - developer.rchain-coop.tk
-        # - blog.rchain-coop.tk
-        # - dbadmin.rchain-coop.tk
-        # - rchain.coop
-        # - www.rchain.coop
-        # - developer.rchain.coop
-        # - blog.rchain.coop
-        # - dbadmin.rchain.coop
+        - blog.rchain-coop.tk
+        - dbadmin.rchain-coop.tk
+        - rchain.coop
+        - www.rchain.coop
+        - developer.rchain.coop
+        - blog.rchain.coop
+        - dbadmin.rchain.coop
     
