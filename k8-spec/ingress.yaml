@@ -3,13 +3,13 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: rchain-coop
-  namespace: dev
   annotations:
     kubernetes.io/ingress.global-static-ip-name: rchain-coop
-    kubernetes.io/ingress.class: gce
+    kubernetes.io/ingress.class: ingress
     ingress.gcp.kubernetes.io/pre-shared-cert: rchain-coop
-    # certmanager.k8s.io/cluster-issuer: rchain-coop
-    # kubernetes.io/tls-acme: "true"
+    certmanager.k8s.io/cluster-issuer: rchain-coop
+    kubernetes.io/tls-acme: "true"
+    ingress.kubernetes.io/force-ssl-redirect: "true"
 
 spec:
   rules:
@@ -19,75 +19,70 @@ spec:
         - backend:
             serviceName: rchain-coop
             servicePort: 3000
-  - host: www.rchain-coop.tk
+  - host: www.rchain-coop.cf
     http:
       paths:
         - backend:
             serviceName: rchain-coop
             servicePort: 3000
 
-  - host: developer.rchain-coop.tk
+  - host: developer.rchain-coop.cf
     http:
       paths:
         - backend:
             serviceName: developer-rchain-coop
             servicePort: 3000
-  - host: blog.rchain-coop.tk
+  - host: blog.rchain-coop.cf
     http:
       paths:
         - backend:
             serviceName: wordpress
             servicePort: 80
-  - host: dbadmin.rchain-coop.tk
+  - host: dbadmin.rchain-coop.cf
     http:
       paths:
         - backend:
             serviceName: db-adminer
             servicePort: 8080
 
-  - host: rchain.coop
-    http:
-      paths:
-        - backend:
-            serviceName: rchain-coop
-            servicePort: 3000
-  - host: www.rchain.coop
-    http:
-      paths:
-        - backend:
-            serviceName: rchain-coop
-            servicePort: 3000
-  - host: developer.rchain.coop
-    http:
-      paths:
-        - backend:
-            serviceName: developer-rchain-coop
-            servicePort: 3000
+  # - host: rchain.coop
+  #   http:
+  #     paths:
+  #       - backend:
+  #           serviceName: rchain-coop
+  #           servicePort: 3000
+  # - host: www.rchain.coop
+  #   http:
+  #     paths:
+  #       - backend:
+  #           serviceName: rchain-coop
+  #           servicePort: 3000
+  # - host: developer.rchain.coop
+  #   http:
+  #     paths:
+  #       - backend:
+  #           serviceName: developer-rchain-coop
+  #           servicePort: 3000
 
-  - host: blog.rchain.coop
-    http:
-      paths:
-        - backend:
-            serviceName: wordpress
-            servicePort: 80
+  # - host: blog.rchain.coop
+  #   http:
+  #     paths:
+  #       - backend:
+  #           serviceName: wordpress
+  #           servicePort: 80
 
-  - host: dbadmin.rchain.coop
-    http:
-      paths:
-        - backend:
-            serviceName: db-adminer
-            servicePort: 8080
+  # - host: dbadmin.rchain.coop
+  #   http:
+  #     paths:
+  #       - backend:
+  #           serviceName: db-adminer
+  #           servicePort: 8080
 
   tls:
   - hosts:
-      - rchain-coop.tk
-      - www.rchain-coop.tk
-      - developer.rchain-coop.tk
-      - blog.rchain-coop.tk
-      - dbadmin.rchain-coop.tk
-      - rchain.coop
-      - www.rchain.coop
-      - developer.rchain.coop
-      - blog.rchain.coop
-      - dbadmin.rchain.coop
+      - rchain-coop.cf
+      - www.rchain-coop.cf
+      - developer.rchain-coop.cf
+      - blog.rchain-coop.cf
+      - dbadmin.rchain-coop.cf
     secretName: tls-letsencrypt-rchain-coop

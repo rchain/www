@@ -1,8 +1,23 @@
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rchain-coop
+  labels:
+    app: rchain-coop
+spec:
+  type: NodePort
+  ports:
+    - name: http
+      port: 3000
+      targetPort: 3000
+      protocol: TCP
+  selector:
+    app: rchain-coop
+---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  namespace: dev
   name: rchain-coop
 spec:
   replicas: 1
