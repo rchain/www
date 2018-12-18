@@ -6,6 +6,7 @@
 VERSION=1.0
 APP_NAME=rsong-org
 IMAGE=$(DOCKER_USER)/$(APP_NAME)
+_TAG = git rev-parse --short HEAD
 TAG=$(VERSION)-$(SHAW)
 
 BIN=node_modules/.bin
@@ -22,6 +23,9 @@ build: install
 dist: build
 	$(BIN)/hugo
 
+tag:
+	echo $(_TAG)
+	git rev-parse --short HEAD
 build_image:  dist
 	docker build -t $(IMAGE) .
 

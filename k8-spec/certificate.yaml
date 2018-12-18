@@ -9,7 +9,7 @@ spec:
   dnsNames:
     - rchain-coop.cf
     - www.rchain-coop.cf
-    - developer.rchain-coop.cf
+    # - developer.rchain-coop.cf
     - blog.rchain-coop.cf
     - dbadmin.rchain-coop.cf
 
@@ -20,11 +20,10 @@ spec:
     config:
       - http01:
           ingressClass: nginx
-          ingress: rchain-coop
         domains:
         - rchain-coop.cf
         - www.rchain-coop.cf
-        - developer.rchain-coop.cf
+        # - developer.rchain-coop.cf
         - blog.rchain-coop.cf
         - dbadmin.rchain-coop.cf
     
