@@ -46,7 +46,7 @@ spec:
         tier: frontend
     spec:
       containers:
-      - image: wordpress:4.8-apache
+      - image: wordpress:5-php7.1-apache
         name: wordpress
         env:
         - name: WORDPRESS_DB_HOST
@@ -54,14 +54,28 @@ spec:
         - name: WORDPRESS_DB_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mysql-root-password
-              key: mysql-root-password
+              name: mysql-pass
+              key: password
         ports:
         - containerPort: 80
           name: wordpress
         volumeMounts:
         - name: wordpress-persistent-storage
           mountPath: /var/www/html
+
+        livenessProbe:
+          httpGet:
+            path: /readme.html
+            port: 80
+          initialDelaySeconds: 5
+          timeoutSeconds: 4
+        readinessProbe:
+          httpGet:
+            path: /readme.html
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 4
+
       volumes:
       - name: wordpress-persistent-storage
         persistentVolumeClaim:
