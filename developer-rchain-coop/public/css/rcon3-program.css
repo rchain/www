@@ -1,0 +1,178 @@
+body {
+    padding-top: 75px;
+}
+
+.subHeader {
+    padding: 0 15rem;
+    font-size: 1.5rem;
+}
+
+.bodyText {
+    padding: .5rem 15rem 2rem;
+}
+
+.main a:not(.inline-link) {
+    border-bottom: 1px dotted #CC1E46;
+    color: black;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+    padding: .2rem .2rem .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .2s;
+}
+
+.main .section a img,
+.main .section .italic img {
+    width: 25px;
+    vertical-align: bottom;
+    position: relative;
+    top: 2px;
+    margin-right: 2px;
+}
+
+.main .section a:hover:not(.inline-link) {
+    background: #CC1E46;
+    border-radius: .2rem;
+}
+
+#programSection table {
+    border-collapse: collapse;
+}
+
+#programSection table th, #programSection table td {
+    border: 1px solid black;
+    padding: .5rem;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.cards .card {
+    width: 25%;
+    margin: 0 1rem;
+    color: #CC1E46;
+}
+
+#programSection table .title {
+    font-size: .9rem;
+    font-weight: 900;
+    margin: 0 0 .2rem;
+}
+
+#programSection table .description {
+    font-size: .8rem;
+    margin: 0 0 .3rem;
+}
+
+.subTitle {
+    font-size: 1.1rem;
+    margin-bottom: .2rem;
+}
+
+.main .subTitle:nth-child(4) {
+    margin-bottom: 1rem;
+}
+
+.sticky {
+    margin: 0 !important;
+    left: 30px;
+    position: fixed;
+    top: 150px;
+}
+
+.main {
+    background: white;
+    padding: 3rem 5rem 14rem;
+}
+
+.main .bodyText {
+    padding: 0;
+    text-align: left;
+    line-height: 1.4;
+}
+
+.main > #introSection .bodyText, .main > #faqSection .bodyText:nth-child(odd) {
+    margin-bottom: 1rem;
+}
+
+
+#footer {
+    z-index: 11;
+}
+
+
+@media (max-width: 1200px) {
+    .subHeader {
+        padding: 0 8rem;
+    }
+    .bodyText {
+        padding: .5rem 8rem 2rem;
+    }
+    .wrapperWrapper {
+        padding: 0 8rem 4rem;
+    }
+    .main {
+        padding: 1rem 1rem 14rem;
+    }
+}
+
+@media (max-width: 960px) {
+    #programSection table .header {
+        font-size: .85rem;
+    }
+    #programSection table .title {
+        font-size: .75rem;
+    }
+    #programSection table .description {
+        font-size: .65rem;
+    }
+    #programSection table tr > td:nth-child(1), #programSection table tr > td:nth-child(2) {
+        font-size: .8rem;
+    }
+    .wrapperWrapper {
+        padding: 0 8vw 8vw;
+    }
+}
+
+@media (max-width: 767px) {
+    .header {
+        font-size: 1.4rem;
+    }
+    .subHeader {
+        padding: 0 8vw;
+        font-size: 1.1rem;
+    }
+    .main .bodyText {
+        font-size;
+        .8rem;
+        padding: 1vw 0 0;
+    }
+    .masthead {
+        height: 40vw;
+        padding-top: 1rem;
+    }
+    .cards .card {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 1.5rem;
+    }
+    .main {
+        padding: 1vw 8vw 8vw;
+    }
+    .main .header {
+        font-size: 1.5rem;
+        margin: 0 0 1rem;
+    }
+}
+
+@media (max-width: 450px) {
+
+}

@@ -1,0 +1,106 @@
+.masthead {
+    height: 300px;
+    padding-top: 6.7rem;
+}
+
+.masthead #logoWrapper {
+    width: 31.6rem;
+}
+
+.masthead #logoWrapper img {
+    width: 7.2rem;
+}
+
+.masthead #logoWrapper .textWrapper h1 {
+    bottom: auto;
+    font-size: 6rem;
+    line-height: .9;
+}
+
+.masthead #logoWrapper .textWrapper div:nth-child(2) {
+    bottom: auto;
+    font-size: 1.4rem;
+}
+
+body > .header {
+    text-align: center;
+    font-size: 1.7em;
+    margin-bottom: 1em;
+}
+
+.cards {
+    padding: 0 15rem 2rem;
+    margin-bottom: 4rem;
+}
+
+.cards > a {
+    width: 45%;
+    margin: 10px;
+}
+
+.bodyText {
+    padding: 1.5rem 15rem 6rem;
+}
+
+@media (max-width: 1200px) {
+    .cards {
+        padding: 0 8rem;
+    }
+    .bodyText {
+        padding: 1.5rem 8rem 6rem;
+    }
+}
+
+@media (max-width: 960px) {}
+
+@media (max-width: 767px) {
+    .masthead {
+        height: 12rem;
+        padding-top: 3rem;
+    }
+    .masthead #logoWrapper {
+        width: 22rem;
+    }
+    .masthead #logoWrapper img {
+        width: 5rem;
+    }
+    .masthead #logoWrapper .textWrapper h1 {
+        font-size: 4rem;
+    }
+    .masthead #logoWrapper .textWrapper div:nth-child(2) {
+        font-size: .92rem;
+    }
+    .cards {
+        padding: 0 8vw;
+    }
+    .cards > a {
+        width: 100%;
+        margin: 0 0 10px;
+    }
+    .bodyText {
+        padding: 4vw 8vw 10vw;
+    }
+}
+
+@media (max-width: 450px) {
+    .masthead {
+        height: 12rem;
+        padding-top: 4rem;
+    }
+    .masthead #logoWrapper {
+        padding: .5rem 1rem;
+        width: 90vw;
+    }
+    .masthead #logoWrapper img {
+        width: 20vw;
+    }
+    .masthead #logoWrapper .textWrapper h1 {
+        font-size: 16vw;
+    }
+    .masthead #logoWrapper .textWrapper div:nth-child(2) {
+        font-size: 3.7vw;
+    }
+    .bodyText {
+        padding: 4vw 8vw 12vw;
+    }
+}

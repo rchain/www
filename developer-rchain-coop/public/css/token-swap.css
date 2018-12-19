@@ -1,0 +1,232 @@
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.main .section {
+    border: 1px solid rgba(70, 69, 68, .5);
+    border-radius: .28571429rem;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 1rem;
+    padding: .8rem;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bodyText.intro {
+    margin: auto;
+    padding: 2rem 0 2rem;
+    width: 70%
+}
+
+.pageTitle {
+    color: black;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: initial;
+    margin-bottom: .5rem;
+    text-align: center;
+}
+
+.header {
+    font-size: 1.5rem;
+    color: #CC1E46;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.subHeader {
+    color: #CC1E46;
+    margin: 1.5rem 0 .7rem;
+    font-size: 1.2rem;
+    font-weight: 900;
+    border-bottom: 1px solid black;
+}
+
+.subSubHeader {
+    color: #CC1E46;
+    font-size: .8rem;
+    font-weight: 900;
+    margin: .5rem 0 0 .5rem;
+    text-transform: uppercase;
+}
+
+.subSubHeader-link {
+    margin: 0 .5rem .5rem 1rem !important;
+}
+
+.main .section .divider {
+    height: 1px;
+    width: 20%;
+    background: #CC1E46;
+    margin: 2rem auto;
+}
+
+#faq {
+    width: 60%;
+}
+
+#faq ul li {
+    margin-bottom: .3rem;
+}
+
+.sectionWrapper {
+    width: 35%;
+}
+
+#milestones ul, #changeLog ul {
+    margin-top: 0;
+    padding: 0 .8rem;
+}
+
+.main .section .expandable > .item:nth-child(2) {
+    margin-top: 4rem;
+}
+
+.main .section .item .title {
+    font-size: 1rem;
+    font-weight: 900;
+    margin-bottom: .2rem;
+}
+
+.main .section .item .body {
+    font-size: .9rem;
+    margin-bottom: .8rem;
+    margin-left: .5rem;
+}
+
+.main .section .item a img,
+.main .section .item .italic img {
+    width: 20px;
+    vertical-align: bottom;
+    position: relative;
+    top: 2px;
+    margin-right: 2px;
+}
+
+.main .section .item a:hover:not(.inline-link) {
+    background: #CC1E46;
+    border-radius: .2rem;
+}
+
+.main .section#status ul {
+    font-size: .9rem;
+}
+
+.main .section#status ul .italic {
+    font-weight: 900;
+}
+
+form label {
+    color: rgba(70, 69, 68, 1);
+    font-size: .8rem;
+}
+
+form input.text {
+    font-size: 1rem;
+    height: 2.5rem;
+    margin-bottom: .5rem;
+    padding: .3rem;
+    width: 95%;
+}
+
+#submitFail {
+    margin-bottom: .5rem;
+}
+
+.cards {
+    margin-bottom: 6rem;
+}
+
+.cards .card {
+    width: 25%;
+    margin: 0 1rem;
+    color: #CC1E46;
+}
+
+.wrapperWrapper {
+    padding: 0 15rem 4rem;
+    margin-bottom: 4rem;
+}
+
+.body .highlight {
+    color: #CC1E46;
+}
+
+
+@media (max-width: 1200px) {
+    .cards .card {
+        width: 27%;
+        min-height: 67px;
+    }
+    .wrapperWrapper {
+        padding: 0 8rem 4rem;
+    }
+    .bodyText.intro{
+        width: 80%;
+    }
+    .sp-form[sp-id="91776"] {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 960px) {
+    .cards .card {
+        width: 28%;
+        min-height: 64px;
+    }
+    .wrapperWrapper {
+        padding: 0 8vw 8vw;
+        margin-bottom: 0;
+    }
+    .sp-form[sp-id="91776"] {
+        width: initial;
+    }
+}
+
+@media (max-width: 767px) {
+    .pageTitle {
+        font-size: 5vw;
+    }
+    .sectionWrapper {
+        width: 100%;
+    }
+    .main .section, #faq {
+        margin: 0 auto .7rem;
+        width: 95%;
+    }
+    .header {}
+    .cards .card {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 1.5rem;
+    }
+    pre {
+        width: 70%;
+    }
+}
+
+@media (max-width: 450px) {
+    .bodyText.intro {
+        width: auto;
+    }
+    .bodyText.intro > div:nth-child(2) {
+        padding: 0 .5rem;
+    }
+    .pageTitle {
+        font-size: 1.7rem;
+    }
+    .sp-form[sp-id="91776"] {
+        padding: 1.5rem .5rem;
+        bottom: 2vw;
+    }
+    .main .section .item .body {
+        font-size: .7rem;
+    }
+
+}

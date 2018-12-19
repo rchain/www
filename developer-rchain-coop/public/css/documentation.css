@@ -1,0 +1,170 @@
+.pageTitle {
+    color: black;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: initial;
+    margin-bottom: .5rem;
+    padding: 2rem 0 0;
+    text-align: center;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 4rem;
+    padding-top: 2rem;
+}
+
+.main .section {
+    border: 1px solid rgba(70, 69, 68, .5);
+    border-radius: .28571429rem;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 1rem;
+    padding: .8rem;
+    width: 45%;
+}
+
+.header {
+    font-size: 1.5rem;
+    color: #CC1E46;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.intro {
+    font-size: .9rem;
+    margin-bottom: 1.5rem;
+}
+
+.section .expandable > .intro:nth-child(1) {
+    padding-top: 1rem;
+}
+
+#rholang .intro:nth-child(2) {
+    margin-bottom: .8rem;
+}
+
+.subHeader {
+    color: #CC1E46;
+    margin: 1.5rem 0 .7rem;
+    font-size: 1.2rem;
+    font-weight: 900;
+    border-bottom: 1px solid black;
+}
+
+.main .section .divider {
+    height: 1px;
+    width: 20%;
+    background: #CC1E46;
+    margin: 2rem auto;
+}
+
+.main .section .item {
+    border-top: 1px solid black;
+}
+
+.main .section .item .title {
+    font-size: 1rem;
+    font-weight: 900;
+    margin-bottom: .2rem;
+}
+
+.main .section .item .body {
+    font-size: .9rem;
+    margin-bottom: .2rem;
+    margin-left: .5rem;
+}
+.main .section#status #roadmap {
+    margin-left: .5rem;
+}
+
+.main .section#status #roadmap th {
+    text-align: left;
+    font-size: .9rem;
+}
+
+.main .section#status #roadmap td {
+    font-size: .8rem;
+}
+
+.cards {
+    margin-bottom: 6rem;
+}
+
+.cards .card {
+    width: 25%;
+    margin: 0 1rem;
+    color: #CC1E46;
+}
+
+.wrapperWrapper {
+    padding: 0 15rem 4rem;
+    margin-bottom: 4rem;
+}
+
+
+@media (max-width: 1200px) {
+    .cards .card {
+        width: 27%;
+        min-height: 67px;
+    }
+    .wrapperWrapper {
+        padding: 0 8rem 4rem;
+    }
+    .sp-form[sp-id="91776"] {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 960px) {
+    .cards .card {
+        width: 28%;
+        min-height: 64px;
+    }
+    .wrapperWrapper {
+        padding: 0 8vw 8vw;
+        margin-bottom: 0;
+    }
+    .sp-form[sp-id="91776"] {
+        width: initial;
+    }
+}
+
+@media (max-width: 767px) {
+    .pageTitle {
+        font-size: 5vw;
+    }
+    .sp-form-outer {
+        margin: 10rem 1rem;
+    }
+    .sp-form .sp-field > div[style] > p {
+        font-size: .8rem;
+    }
+    .main .section {
+        margin: 0 auto .7rem;
+        width: 95%;
+    }
+    .header {}
+    .cards .card {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .pageTitle {
+        font-size: 1.7rem;
+    }
+    .intro {
+        font-size: .7rem;
+    }
+    .section .header.expander {
+        font-size: 1.4rem;
+    }
+    .sp-form[sp-id="91776"] {
+        padding: 1.5rem .5rem;
+    }
+
+}

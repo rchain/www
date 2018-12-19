@@ -1,0 +1,85 @@
+.main {
+    padding-top: 2rem;
+}
+
+#FAQ {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 5rem;
+    font-weight: 900;
+    font-family: 'Lato', sans-serif;
+}
+
+.header {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.7rem;
+    margin: 3rem auto 2rem;
+    padding: 1rem 0;
+    font-weight: 900;
+    width: 60%;
+    border-bottom: 1px solid rgba(70, 69, 68, 1);
+}
+
+.subHeader {
+    padding: 0 15rem;
+    font-size: 1.5rem;
+}
+
+.bodyText {
+    padding: .5rem 15rem 2rem;
+}
+
+.cards .card {
+    width: 25%;
+    margin: 0 1rem;
+    color: #CC1E46;
+}
+
+.wrapperWrapper {
+    padding: 0 15rem 4rem;
+}
+
+
+@media (max-width: 1200px) {
+    .subHeader {
+        padding: 0 8rem;
+    }
+    .bodyText {
+        padding: .5rem 8rem 2rem;
+    }
+    .wrapperWrapper {
+        padding: 0 8rem 4rem;
+    }
+}
+
+@media (max-width: 960px) {
+    .wrapperWrapper {
+        padding: 0 8vw 8vw;
+    }
+}
+
+@media (max-width: 767px) {
+    .header {
+        font-size: 1.4rem;
+    }
+    .subHeader {
+        padding: 0 8vw;
+        font-size: 1.1rem;
+    }
+    .bodyText {
+        padding: 1vw 8vw 4vw;
+    }
+    #FAQ {
+        font-size: 4rem;
+    }
+    .cards .card {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 450px) {
+
+}
