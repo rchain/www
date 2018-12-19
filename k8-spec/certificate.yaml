@@ -9,21 +9,22 @@ spec:
   dnsNames:
     - rchain-coop.cf
     - www.rchain-coop.cf
-    # - developer.rchain-coop.cf
     - blog.rchain-coop.cf
     - dbadmin.rchain-coop.cf
+    - developer.rchain-coop.cf
+    - rsong.rchain-coop.cf
 
   issuerRef:
     name: rchain-coop
     kind: ClusterIssuer
   acme:
     config:
-      - http01:
-          ingressClass: nginx
+      - ingressClass: nginx
         domains:
-        - rchain-coop.cf
-        - www.rchain-coop.cf
-        # - developer.rchain-coop.cf
-        - blog.rchain-coop.cf
-        - dbadmin.rchain-coop.cf
-    
+          - rchain-coop.cf
+          - www.rchain-coop.cf
+          - blog.rchain-coop.cf
+          - dbadmin.rchain-coop.cf
+          - developer.rchain-coop.cf
+          - rsong.rchain-coop.cf
+

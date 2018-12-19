@@ -32,11 +32,15 @@ spec:
       containers:
       - name: developer-rchain-coop
         image: kayvank/developer.rchain.coop:1.0-94e93f6
+        env:
+          - name: DB_URL
+            valueFrom:
+              secretKeyRef:
+                name: postgres-url
+                key: postgres-url
+
         ports:
         - containerPort: 3000
-        envFrom:
-          - configMapRef:
-              name: postgres-config
         livenessProbe:
           httpGet:
             path: /healthz
