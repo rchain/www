@@ -34,7 +34,7 @@ package-lock.json
 # webpack stuff
 .webpack/
 .flow_build/
-public/
+##public/
 data/
 static/
 dist/
