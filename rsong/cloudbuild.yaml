@@ -8,7 +8,7 @@ steps:
   - "set"
   - "image"
   - "deployment/rsong"
-  - "my-container=gcr.io/www-rchain-coop-222319/github.com/rchain/www/rsong:$TAG-NAME-$SHORT_SHA"
+  - "my-container=gcr.io/www-rchain-coop-222319/github.com/rchain/www/rsong:$TAG_NAME-$SHORT_SHA"
   env:
   - 'CLOUDSDK_COMPUTE_REGION=us-east1'
   - 'CLOUDSDK_CONTAINER_CLUSTER=dev-rchain-coop'
