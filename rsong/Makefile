@@ -9,7 +9,7 @@ ORG=rchain
 IMAGE=$(DOCKER_USER)/$(APP_NAME)
 # IMAGE=$(ORG)/$(APP_NAME)
 _TAG = git rev-parse --short HEAD
-TAG=$(VERSION)-$(SHAW)
+TAG=$(VERSION)-$(SHORT_SHA)
 
 BIN=node_modules/.bin
 GULP=$(BIN)/gulp

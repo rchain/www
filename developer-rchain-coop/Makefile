@@ -6,7 +6,7 @@
 VERSION=1.0
 APP_NAME=developer.rchain.coop
 IMAGE=$(DOCKER_USER)/$(APP_NAME)
-TAG=$(VERSION)-$(SHAW)
+TAG=$(VERSION)-$(SHORT_SHA)
 
 BIN=node_modules/.bin
 GULP=$(BIN)/gulp

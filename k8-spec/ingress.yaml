@@ -21,28 +21,24 @@ spec:
         - backend:
             serviceName: rchain-coop
             servicePort: 3000
-
   - host: www.rchain-coop.cf
     http:
       paths:
         - backend:
             serviceName: rchain-coop
             servicePort: 3000
-
   - host: developer.rchain-coop.cf
     http:
       paths:
         - backend:
             serviceName: developer-rchain-coop
             servicePort: 3000
-
   - host: blog.rchain-coop.cf
     http:
       paths:
         - backend:
             serviceName: wordpress
             servicePort: 80
-
   - host: dbadmin.rchain-coop.cf
     http:
       paths:
@@ -56,45 +52,50 @@ spec:
             serviceName: rsong
             servicePort: 80
 
-  # - host: rchain.coop
-  #   http:
-  #     paths:
-  #       - backend:
-  #           serviceName: rchain-coop
-  #           servicePort: 3000
-  # - host: www.rchain.coop
-  #   http:
-  #     paths:
-  #       - backend:
-  #           serviceName: rchain-coop
-  #           servicePort: 3000
-  # - host: developer.rchain.coop
-  #   http:
-  #     paths:
-  #       - backend:
-  #           serviceName: developer-rchain-coop
-  #           servicePort: 3000
-
-  # - host: blog.rchain.coop
-  #   http:
-  #     paths:
-  #       - backend:
-  #           serviceName: wordpress
-  #           servicePort: 80
-
-  # - host: dbadmin.rchain.coop
-  #   http:
-  #     paths:
-  #       - backend:
-  #           serviceName: db-adminer
-  # #           servicePort: 8080
+  - host: rchain.coop
+    http:
+      paths:
+        - backend:
+            serviceName: rchain-coop
+            servicePort: 3000
+  - host: www.rchain.coop
+    http:
+      paths:
+        - backend:
+            serviceName: rchain-coop
+            servicePort: 3000
+  - host: developer.rchain.coop
+    http:
+      paths:
+        - backend:
+            serviceName: developer-rchain-coop
+            servicePort: 3000
+  - host: blog.rchain.coop
+    http:
+      paths:
+        - backend:
+            serviceName: wordpress
+            servicePort: 80
+  - host: dbadmin.rchain.coop
+    http:
+      paths:
+        - backend:
+            serviceName: db-adminer
+            servicePort: 8080
 
   tls:
   - hosts:
+      - rchain.coop
+      - www.rchain.coop
+      - developer.rchain.coop
+      - blog.rchain.coop
+      - dbadmin.rchain.coop
+      - rsong.rchain.coop
       - rchain-coop.cf
       - www.rchain-coop.cf
       - developer.rchain-coop.cf
       - blog.rchain-coop.cf
       - dbadmin.rchain-coop.cf
       - rsong.rchain-coop.cf
+
     secretName: tls-letsencrypt-rchain-coop
