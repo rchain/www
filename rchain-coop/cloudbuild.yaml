@@ -11,4 +11,5 @@ steps:
   - "my-container=gcr.io/www-rchain-coop-222319/github.com/rchain/www/rchain-coop:v1.0-$SHORT_SHA"
   env:
   - 'CLOUDSDK_COMPUTE_REGION=[us-east1]'
+  - 'CLOUDSDK_COMPUTE_ZONE=[us-east1-b]'
   - 'CLOUDSDK_CONTAINER_CLUSTER=[dev-rchain-coop]'
