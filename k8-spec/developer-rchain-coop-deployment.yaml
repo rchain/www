@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: developer-rchain-coop
-        image: kayvank/developer.rchain.coop:1.0-94e93f6
+        image: kayvank/developer.rchain.coop:1.0-40980a8
         env:
           - name: DB_URL
             valueFrom:

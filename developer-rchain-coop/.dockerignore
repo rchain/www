@@ -1,2 +1,3 @@
-k8-spec
-dist
+*/k8-spec*
+*/dist*
+*/test*
