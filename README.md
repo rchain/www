@@ -45,9 +45,9 @@ All work must have a corresponding work order, [JIRA ](https://rchain.atlassian.
 - Commit your changes as outlined in [Committing your work](#Commtting-your-work)
 - Push to the branch (git push origin feature/fooBar)
 - Create a new Pull Request
-- select a Reviewer
+- Select a Reviewer
 
-*Note: All pull request must be reviewed before merge to master branch*
+*Note: All pull request must be reviewed before merging to master branch*
 
 ## Releasing your changes to Production
 www is a [CI/CD](https://cloud.google.com/kubernetes-engine/continuous-deployment/) project.  
@@ -56,7 +56,7 @@ Once pull requests are reviewed and merged to master branch, [Cloud Build](https
 - create docker containers
 - publish containers to [Container Registry](https://cloud.google.com/container-registry/)
 - deploy to [kubernetes (k8) cluster](https://kubernetes.io/)
-
+To check the status of your build visit: https://console.cloud.google.com/cloud-build
 
 #### Committing your work
 Prefix git commit messages with one or more of prefixes as outlined here:

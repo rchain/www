@@ -4,7 +4,6 @@ COPY . .
 RUN apt-get update && \
     apt-get -y install sendmail && \
     apt-get update && \
-    npm install --production && \
-    npm prune
+    npm install --production
 EXPOSE $PORT
 CMD ["npm", "start"]
