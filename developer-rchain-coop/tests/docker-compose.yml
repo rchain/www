@@ -2,7 +2,6 @@
 version: '3.1'
 
 services:
-
   db:
     image: postgres
     volumes:
@@ -14,10 +13,16 @@ services:
       POSTGRES_USER:  $PGUSER
       PGPASSWORD:  $PGPASSWORD
       PGUSER:   $PGUSER
-
   adminer:
     image: adminer
     restart: always
     ports:
       - 8080:8080
-
+  developer:
+    image: kayvank/developer-rchain-coop:v1.0-123
+    restart: always
+    ports:
+      - 3000:3000
+    environment:
+      PDB: $PGUSER
+      DB_URL: "postgresql://$PGUSER:$PGPASSWORD@db:5432/$PGDB"
