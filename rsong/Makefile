@@ -3,7 +3,7 @@
 ## create and publishes rsong.org docker image
 ##
 
-VERSION=1.0
+VERSION=v1.0
 APP_NAME=rsong
 ORG=rchain
 IMAGE=$(DOCKER_USER)/$(APP_NAME)
