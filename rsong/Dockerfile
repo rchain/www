@@ -1,5 +1,8 @@
 FROM nginx:alpine
+ENV PORT 80
+EXPOSE $PORT
 WORKDIR /usr/share/nginx/html
 COPY public .
-RUN rm -f /etc/nginx/conf.d/default.conf
+RUN apk update && \
+  rm -f /etc/nginx/conf.d/default.conf
 ADD default.conf /etc/nginx/conf.d

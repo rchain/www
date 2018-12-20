@@ -1,8 +1,9 @@
-FROM node:10.13.0-jessie
-ENV APP_DIR /var/app
+FROM node:11-slim
 ENV PORT 3000
-RUN mkdir -p $APP_DIR
-WORKDIR $APP_DIR
-COPY . $APP_DIR
+COPY . .
 EXPOSE $PORT
-CMD ["npm", "start"]
+RUN apt-get update && \
+ npm install --production && \
+ npm rebuild && \
+ npm prune
+CMD [ "npm", "start" ]

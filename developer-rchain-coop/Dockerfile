@@ -1,11 +1,10 @@
 FROM node:11-slim
+ENV PORT 3000
+COPY . .
 RUN apt-get update && \
     apt-get -y install sendmail && \
-    apt-get update 
-ENV APP_DIR /var/app
-ENV PORT 3000
-RUN mkdir -p $APP_DIR
-WORKDIR $APP_DIR
-COPY . $APP_DIR 
+    apt-get update && \
+    npm install --production && \
+    npm prune
 EXPOSE $PORT
 CMD ["npm", "start"]
