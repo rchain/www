@@ -5,6 +5,8 @@ steps:
   args: ["push", "gcr.io/www-rchain-coop-222319/github.com/rchain/www/rchain-coop:v1.0-$SHORT_SHA"]
 - name: 'gcr.io/cloud-builders/kubectl'
   args:
+  - "-n"
+  - "qa"
   - "set"
   - "image"
   - "deployment.v1.apps/rchain-coop"
