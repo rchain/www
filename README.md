@@ -1,6 +1,6 @@
 www
 ----
-www repository contains Rchain websites.  These websites are:
+www repository   contains Rchain websites.  These websites are:
 - [rchain.coop](https://rchain.coop)
 - [blog.rchain.coop](https://blog.rchain.coop)
 - [developer.rchain.coop](https://developer.rchain.coop)
@@ -8,8 +8,29 @@ www repository contains Rchain websites.  These websites are:
 
 The open-source RChain project is building a decentralized, economic, censorship-resistant, public compute infrastructure and blockchain. It will host and execute programs popularly referred to as “smart contracts”. It will be trustworthy, scalable, concurrent, with proof-of-stake consensus and content delivery.
 
+```
+  +------------------------------------------------------------------------+
+  |                            Rchain K8 Cluster                           |
+  |------------------------------------------------------------------------|
+  |                                 +------------+                         |
+  |                             +---|rchain-coop |                         |
+  |  +-------+                  |   +------------+                         |
+  |  | certs |                  |   +------------+                         |
+  |  +-------+      +---+       |   |developer-  |          +------------+ |
+  |  +-------+      | I |       +---|rchain-coop |<-------- | postgreSQL | |
+  |  |issuer |<---->| n |       |   +------------+          +------------+ |
+  |  +-------+      | g |<----->|   +------------+          +------------+ |
+  |                 | e |       +---| wordpress  |<-------- |mysql       | |
+  |  +-------+      | s |       |   +------------+          +------------+ |
+  |  | cert- |      | s |       |   +-------+                              |
+  |  | mgr   |      +---+       +---|rsong  |                              |
+  |  +-------+                  |   +-------+                              |
+  +------------------------------------------------------------------------+
+```
+
+ 
 ## Installation
-Install 
+Install
 - [git](https://git-scm.com/)
 - [node & npm](https://www.npmjs.com/get-npm), required for testing
 
