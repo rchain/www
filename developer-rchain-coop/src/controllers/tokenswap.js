@@ -1,4 +1,5 @@
 const pg = require('pg');
+const db = require('../controllers/db')
 
 //Tokenswap Form Validation
 function formValidation (req) {
@@ -19,20 +20,13 @@ function formValidation (req) {
 //Save email submission to DB
 function saveSubmission  (req) {
     //open DB connection
-    var pool = new pg.Pool({
-        user: 'admin',
-        host: '127.0.0.1',
-        database: 'postgres',
-        password: '!32admin55',
-        port: '5432'
-    });
+    const pool = db.connection.INSTANCE();
     
     var name = [req.body.email];
     var sql = "INSERT INTO tokenswap(email) VALUES($1)";
     //Save to DB and close connection
     pool.query(sql, name, (err, res) => {
         console.log(err, res);
-        pool.end();
     });
     return;
 }
