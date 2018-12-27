@@ -7,18 +7,18 @@ spec:
   secretName: tls-letsencrypt-rchain-coop
   commonName: rchain.coop
   dnsNames:
-    - rchain-coop.cf
-    - www.rchain-coop.cf
-    - blog.rchain-coop.cf
-    - dbadmin.rchain-coop.cf
-    - developer.rchain-coop.cf
-    - rsong.rchain-coop.cf
     - rchain.coop
+    - rchain-coop.cf
     - www.rchain.coop
+    - www.rchain-coop.cf
+    - developer.rchain.coop
+    - developer.rchain-coop.cf
+    - rsong.rchain.coop
+    - rsong.rchain-coop.cf
+    - blog.rchain-coop.cf
     - blog.rchain.coop
     - dbadmin.rchain.coop
-    - developer.rchain.coop
-    - rsong.rchain.coop
+    - dbadmin.rchain-coop.cf
 
   issuerRef:
     name: rchain-coop
@@ -28,16 +28,16 @@ spec:
       - ingressClass: nginx
         domains:
           - rchain.coop
-          - www.rchain.coop
-          - blog.rchain.coop
-          - dbadmin.rchain.coop
-          - developer.rchain.coop
-          - rsong.rchain.coop
           - rchain-coop.cf
+          - www.rchain.coop
           - www.rchain-coop.cf
-          - blog.rchain-coop.cf
-          - dbadmin.rchain-coop.cf
+          - developer.rchain.coop
           - developer.rchain-coop.cf
+          - rsong.rchain.coop
           - rsong.rchain-coop.cf
+          - blog.rchain.coop
+          - blog.rchain-coop.cf
+          - dbadmin.rchain.coop
+          - dbadmin.rchain-coop.cf
 
 
