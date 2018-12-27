@@ -43,15 +43,7 @@ router.get('/platform', function (req, res) {
 });
 
 router.get('/learn-rholang', function (req, res) {
-    res.render('learn-rholang', {
-        title: 'Learn Rholang',
-        style: 'learn-rholang',
-        ogtitle: 'Learn Rholang',
-        ogdescription: "",
-        ogurl: selfUrl + '/platform',
-        ogimg: '',
-        scripts: '/js/learn-rholang_Browser.js'
-    });
+    res.redirect(301, 'https://github.com/JoshOrndorff/LearnRholangByExample')
 });
 
 router.get('/community', function (req, res) {

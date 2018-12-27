@@ -4,7 +4,7 @@
 ##
 
 VERSION=v1.0
-APP_NAME=developer.rchain.coop
+APP_NAME=developer-rchain-coop
 IMAGE=$(DOCKER_USER)/$(APP_NAME)
 TAG=$(VERSION)-$(SHORT_SHA)
 

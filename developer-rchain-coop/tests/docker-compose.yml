@@ -19,7 +19,7 @@ services:
     ports:
       - 8080:8080
   developer:
-    image: kayvank/developer-rchain-coop:v1.0-123
+    image: kayvank/developer-rchain-coop
     restart: always
     ports:
       - 3000:3000
