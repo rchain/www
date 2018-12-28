@@ -142,7 +142,7 @@ npm start ## to execute the site
 ```
 To test the rchain.coop locally point your browser to [localhost:3000](http://localhost:3000)
 ```
-curl -v localhsot:3000
+curl -v localhost:3000
 ```
 ### Installing rsong
 
