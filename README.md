@@ -172,7 +172,7 @@ export SHORT_SHA=$SHA
 export PGUSER='rock_user'
 export PGPASSWORD='pg_secret_password'
 export PGDB=$PGUSER
-export DOCKER_IP='172.24.0.3' ## may have to be modiled depending on docker inspect output
+export DOCKER_IP='172.24.0.3' ## may have to be modified depending on docker inspect output
 export DB_IP=$DOCKER_IP
 export DB_URL="postgresql://$PGUSER:$PGPASSWORD@$DB_IP:5432/$PGDB"
 
