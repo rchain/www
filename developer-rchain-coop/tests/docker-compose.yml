@@ -18,11 +18,11 @@ services:
     restart: always
     ports:
       - 8080:8080
-  developer:
-    image: kayvank/developer-rchain-coop
-    restart: always
-    ports:
-      - 3000:3000
+  # developer:
+  #   image: kayvank/developer-rchain-coop
+  #   restart: always
+  #   ports:
+  #     - 3000:3000
     environment:
       PDB: $PGUSER
       DB_URL: "postgresql://$PGUSER:$PGPASSWORD@db:5432/$PGDB"
