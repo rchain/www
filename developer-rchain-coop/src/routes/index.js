@@ -3,7 +3,7 @@ const router = express.Router();
 const request = require('request');
 const tokenswap = require('../controllers/tokenswap.js');
 const scholarship = require('../controllers/scholarship.js');
-const cryptoDb = require('../controllers/crypto-db');
+//const cryptoDb = require('../controllers/crypto-db');
 const validation = require('../controllers/validation');
 const cryptoEmail = require('../controllers/cryptoEmail');
 const eventbrite = require('../controllers/eventbrite');
@@ -11,7 +11,7 @@ const Web3 = require('web3');
 const web3 = new Web3('http://localhost:3000');
 const nodemailer = require('nodemailer');
 
-// k8 health check. 
+// k8 health check.
 router.get('/healthz', function(req, res) {
     res.send('healthy')
 });
