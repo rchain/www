@@ -7,11 +7,11 @@
 }
 
 .main .section {
-    border: 1px solid rgba(70, 69, 68, .5);
+    border: solid rgba(70, 69, 68, .5);
     border-radius: .28571429rem;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 1rem;
-    padding: .8rem;
+    /* padding: .8rem; */
 }
 
 .italic {
@@ -34,8 +34,9 @@
 }
 
 .header {
-    font-size: 1.5rem;
-    color: #CC1E46;
+  color: #cc1e46;
+  font-size: 20px;
+  font-weight: 700;
     text-align: center;
     text-transform: uppercase;
 }
@@ -89,14 +90,15 @@
 }
 
 .main .section .item .title {
-    font-size: 1rem;
-    font-weight: 900;
+    /* font-size: 1rem; */
+    font-weight: 600;
     margin-bottom: .2rem;
 }
 
 .main .section .item .body {
-    font-size: .9rem;
-    margin-bottom: .8rem;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
     margin-left: .5rem;
 }
 

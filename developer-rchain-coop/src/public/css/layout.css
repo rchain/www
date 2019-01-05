@@ -15,12 +15,12 @@ a {
 
 html {
     height: 100%;
-    font-family: font-family: 'Montserrat', sans-serif;
+    font-family: Arial, 'Helvetica Neue', sans-serif;
 }
 
 body {
     position: relative;
-    font-family: 'Montserrat', sans-serif;
+    font-family: Arial, 'Helvetica Neue', sans-serif;
     padding-bottom: 500px;
     min-height: 100% !important;
     -webkit-font-smoothing: antialiased;
@@ -86,7 +86,7 @@ body {
 .nav .item {
     font-size: .9rem;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
+    font-family: Arial, 'Helvetica Neue', sans-serif;
     font-weight: 900;
     border-radius: .28571429rem;
     margin: 0 1.3vw;
@@ -165,7 +165,7 @@ body {
 }
 
 .section .expandable > .item:nth-child(1) {
-    padding-top: 1rem;
+    /* padding: 1rem; */
 }
 
 .section .header.expander {
@@ -272,7 +272,7 @@ form button:hover {
 }
 
 .bodyText.intro {
-    text-align: center;
+    text-align: left;
 }
 
 .bodyText .header {
@@ -852,4 +852,44 @@ form button:hover {
     #footer .footer-social .socialText {
         display: none;
     }
+}
+/* kayvan mods */
+.g-cards {
+  padding: 40px;
+  background-color: rgb(249, 250, 251);
+  border-radius: 4px;
+  color: rgb(104, 104, 104);
+  font-size: 15px;
+  font-family: Arial, 'Helvetica Neue', sans-serif;
+}
+
+.g-cards-header {
+  color: rgb(204, 30, 70);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.g-cards-subheader {
+  color: rgb(104, 104, 104);
+  font-size: 15px;
+}
+
+.g-input {
+  border-color: rgb(227, 227, 227);
+  border-radius: 4px;
+  color: rgb(0, 0, 0);
+  font-weight: 400;
+}
+
+.g-submit {
+  background-color: rgb(204, 30, 70);
+  border-radius: 4px;
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+}
+
+.g-guarantee {
+  color: rgb(77, 77, 77);
+  font-size: 13px;
+  font-weight: 400;
 }
