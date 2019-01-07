@@ -73,6 +73,12 @@ spec:
         - backend:
             serviceName: wordpress
             servicePort: 80
+  - host: forum2.rchain.coop
+    http:
+      paths:
+        - backend:
+            serviceName: wordpress
+            servicePort: 80
   - host: blog.rchain-coop.cf
     http:
       paths:
@@ -103,6 +109,7 @@ spec:
       - rsong.rchain.coop
       - rsong.rchain-coop.cf
       - blog.rchain.coop
+      - forum2.rchain.coop
       - blog.rchain-coop.cf
       - dbadmin.rchain.coop
       - dbadmin.rchain-coop.cf
