@@ -12,12 +12,14 @@ spec:
     - www.rchain.coop
     - www.rchain-coop.cf
     - developer.rchain.coop
+    - forum2.rchain.coop
     - developer.rchain-coop.cf
     - rsong.rchain.coop
     - rsong.rchain-coop.cf
     - blog.rchain-coop.cf
     - blog.rchain.coop
     - dbadmin.rchain.coop
+    - dbadmin.rchain-coop.cf
     - dbadmin.rchain-coop.cf
 
   issuerRef:
