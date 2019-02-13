@@ -98,6 +98,12 @@ spec:
         - backend:
             serviceName: db-adminer
             servicePort: 8080
+  - host: faq.rchain.coop
+    http:
+      paths:
+        - backend:
+            serviceName: wordpress
+            servicePort: 80
 
   tls:
   - hosts:
@@ -114,5 +120,6 @@ spec:
       - dbadmin.rchain.coop
       - dbadmin.rchain-coop.cf
       - rchain-coop.cf
+      - faq.rchain.coop
 
     secretName: tls-letsencrypt-rchain-coop
