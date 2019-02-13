@@ -21,6 +21,7 @@ spec:
     - dbadmin.rchain.coop
     - dbadmin.rchain-coop.cf
     - dbadmin.rchain-coop.cf
+    - faq.rchain.coop
 
   issuerRef:
     name: rchain-coop
@@ -37,10 +38,9 @@ spec:
           - developer.rchain-coop.cf
           - rsong.rchain.coop
           - rsong.rchain-coop.cf
-          - blog.rchain.coop 
+          - blog.rchain.coop
           - forum2.rchain.coop
           - blog.rchain-coop.cf
           - dbadmin.rchain.coop
           - dbadmin.rchain-coop.cf
-
-
+          - faq.rchain.coop
