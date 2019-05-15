@@ -8,19 +8,11 @@ spec:
   commonName: rchain.coop
   dnsNames:
     - rchain.coop
-    - rchain-coop.cf
     - www.rchain.coop
-    - www.rchain-coop.cf
     - developer.rchain.coop
-    - forum2.rchain.coop
-    - developer.rchain-coop.cf
     - rsong.rchain.coop
-    - rsong.rchain-coop.cf
-    - blog.rchain-coop.cf
     - blog.rchain.coop
     - dbadmin.rchain.coop
-    - dbadmin.rchain-coop.cf
-    - dbadmin.rchain-coop.cf
     - faq.rchain.coop
 
   issuerRef:
@@ -31,16 +23,9 @@ spec:
       - ingressClass: nginx
         domains:
           - rchain.coop
-          - rchain-coop.cf
           - www.rchain.coop
-          - www.rchain-coop.cf
           - developer.rchain.coop
-          - developer.rchain-coop.cf
           - rsong.rchain.coop
-          - rsong.rchain-coop.cf
           - blog.rchain.coop
-          - forum2.rchain.coop
-          - blog.rchain-coop.cf
           - dbadmin.rchain.coop
-          - dbadmin.rchain-coop.cf
           - faq.rchain.coop
