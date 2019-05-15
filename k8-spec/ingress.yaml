@@ -27,18 +27,7 @@ spec:
         - backend:
             serviceName: rchain-coop
             servicePort: 3000
-  - host: rchain-coop.cf
-    http:
-      paths:
-        - backend:
-            serviceName: rchain-coop
-            servicePort: 3000
-  - host: www.rchain-coop.cf
-    http:
-      paths:
-        - backend:
-            serviceName: rchain-coop
-            servicePort: 3000
+
 
   - host: developer.rchain.coop
     http:
@@ -46,20 +35,9 @@ spec:
         - backend:
             serviceName: developer-rchain-coop
             servicePort: 3000
-  - host: developer.rchain-coop.cf
-    http:
-      paths:
-        - backend:
-            serviceName: developer-rchain-coop
-            servicePort: 3000
+
 
   - host: rsong.rchain.coop
-    http:
-      paths:
-        - backend:
-            serviceName: rsong
-            servicePort: 80
-  - host: rsong.rchain-coop.cf
     http:
       paths:
         - backend:
@@ -73,18 +51,6 @@ spec:
         - backend:
             serviceName: wordpress
             servicePort: 80
-  - host: forum2.rchain.coop
-    http:
-      paths:
-        - backend:
-            serviceName: wordpress
-            servicePort: 80
-  - host: blog.rchain-coop.cf
-    http:
-      paths:
-        - backend:
-            serviceName: wordpress
-            servicePort: 80
 
   - host: dbadmin.rchain.coop
     http:
@@ -92,12 +58,8 @@ spec:
         - backend:
             serviceName: db-adminer
             servicePort: 8080
-  - host: dbadmin.rchain-coop.cf
-    http:
-      paths:
-        - backend:
-            serviceName: db-adminer
-            servicePort: 8080
+
+
   - host: faq.rchain.coop
     http:
       paths:
@@ -109,17 +71,10 @@ spec:
   - hosts:
       - rchain.coop
       - www.rchain.coop
-      - www.rchain-coop.cf
       - developer.rchain.coop
-      - developer.rchain-coop.cf
       - rsong.rchain.coop
-      - rsong.rchain-coop.cf
       - blog.rchain.coop
-      - forum2.rchain.coop
-      - blog.rchain-coop.cf
       - dbadmin.rchain.coop
-      - dbadmin.rchain-coop.cf
-      - rchain-coop.cf
       - faq.rchain.coop
 
     secretName: tls-letsencrypt-rchain-coop
