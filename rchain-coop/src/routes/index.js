@@ -93,6 +93,42 @@ router.get('/portfolio', function (req, res) {
     });
 });
 
+router.get('/member-invoice', function (req, res) {
+    res.render('member-invoice', {
+        title: 'Membership Invoice',
+        style: 'community',
+        ogtitle: 'Membership Invoice',
+        ogdescription: "",
+        ogurl: selfUrl + '/member-invoice',
+        ogimg: '',
+        scripts: ''
+    });
+});
+
+router.get('/success', function (req, res) {
+    res.render('success', {
+        title: 'Success',
+        style: 'community',
+        ogtitle: 'Success',
+        ogdescription: "",
+        ogurl: selfUrl + '/success',
+        ogimg: '',
+        scripts: ''
+    });
+});
+
+router.get('/canceled', function (req, res) {
+    res.render('canceled', {
+        title: 'Payment Canceled',
+        style: 'community',
+        ogtitle: 'Canceled',
+        ogdescription: "",
+        ogurl: selfUrl + '/canceled',
+        ogimg: '',
+        scripts: ''
+    });
+});
+
 router.get('/events', function (req, res) {
     res.redirect(301,conf.get('url.blog') )
 });
@@ -101,11 +137,11 @@ router.get('/events/:r', function (req, res) {
     res.redirect(301,conf.get('url.blog') + '/' + req.params.r)
 });
 
-router.get('/blog',  (req, res, next) => {  
+router.get('/blog',  (req, res, next) => {
     res.redirect(301, conf.get('url.blog') )
 });
 
-router.get('/blog/:r',  (req, res, next) => {  
+router.get('/blog/:r',  (req, res, next) => {
     res.redirect(301, conf.get('url.blog') +'/' + req.params.r)
 });
 
