@@ -5,33 +5,40 @@
 
 <div class="section" id="posSection">
     <div class="textWrapper">
-        <p>Becoming a member requires a $20 one-time fee. To maintain your membership, you have to spend at least $10 in fees once the platform launches. You are then eligible for a rebate each year based on usage (think <a href="https://www.rei.com/member-thanks" target="_blank">REI</a>).</p>
-        <p>During registration you’ll have the option of joining our Discord community. Once you’re signed up, we’ll communicate with you through member newsletters to provide voting information and other essential notifications.</p>
-        <!-- Load Stripe.js on your website. -->
-        <!-- Load Stripe.js on your website. -->
+        <p>Becoming a member requires a non-refundable one-time fee of $20 (Click <strong>Stripe Invoice</strong> below).</p>
+        <p>To maintain your membership, you must spend at least $10/yr in fees once the platform launches. You are then eligible for a rebate each year based on your usage of the platform (think <a href="https://www.rei.com/member-thanks" target="_blank">REI</a>).</p>
+        <p>After payment, you will receive instructions on completing the following <strong>required</strong> steps:</p>
+        <p></p>
+        <ul>
+            <li>Join the Co-op's guild on <a href="https://discord.gg/NWkQnfH">Discord</a> where you can chat with Co-op members, developers, and staff.</li>
+            <li>affirmation of our <a href="https://github.com/rchain/legaldocs/blob/master/Coop%20Membership%20Agreement.pdf" target="_blank" rel="noopener noreferrer"><u>membership agreement</u></a></li>
+            <li>Secure upload of the full photo page of your valid passport (using <a href="https://blog.mozilla.org/blog/2019/03/12/introducing-firefox-send-providing-free-file-transfers-while-keeping-your-personal-information-private/" target="_blank" rel="noopener noreferrer"><u>Firefox Send</u>)</a></li>
+            <li>ID-Verification (over webcam) with Co-op staff</li>
+        </ul>
+
         <!-- Load Stripe.js on your website. -->
         <script src="https://js.stripe.com/v3"></script>
 
         <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
         <button
           style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
-          id="checkout-button-sku_FCdisYkBTKJNNE"
+          id="checkout-button-sku_FCVeEVbGY4qXgt"
           role="link"
         >
-          Checkout
+          Stripe Invoice
         </button>
 
         <div id="error-message"></div>
 
         <script>
-          var stripe = Stripe('pk_test_uZxzP3nvt7ZOiIG63oPN7AZo');
+          var stripe = Stripe('pk_live_CdygcZogNlO4j3xIIXVS5Rp2');
 
-          var checkoutButton = document.getElementById('checkout-button-sku_FCdisYkBTKJNNE');
+          var checkoutButton = document.getElementById('checkout-button-sku_FCVeEVbGY4qXgt');
           checkoutButton.addEventListener('click', function () {
             // When the customer clicks on the button, redirect
             // them to Checkout.
             stripe.redirectToCheckout({
-              items: [{sku: 'sku_FCdisYkBTKJNNE', quantity: 1}],
+              items: [{sku: 'sku_FCVeEVbGY4qXgt', quantity: 1}],
 
               // Do not rely on the redirect to the successUrl for fulfilling
               // purchases, customers may not always reach the success_url after
@@ -51,7 +58,10 @@
             });
           });
         </script>
-        <p>"The cooperative is an institutional innovation. It’s a structure designed to make apparent to people the truth, which is that ultimately we will benefit from working together and supporting one another's success." &mdash; Nathan Schneider, author of <span style="border:1px solid black"><i>Everything for Everyone: The Radical Tradition that is Shaping the Next Economy</i> and RChain Cooperative member</span></p>
+
+    <p></p>
+
+    <!-- <p>"The cooperative is an institutional innovation. It’s a structure designed to make apparent to people the truth, which is that ultimately we will benefit from working together and supporting one another's success." &mdash; Nathan Schneider, author of <span style="border:1px solid black"><i>Everything for Everyone: The Radical Tradition that is Shaping the Next Economy</i> and RChain Cooperative member</span></p>
     </div>
     <div class="flexWrapper">
         <div class="imgWrapper">
@@ -70,7 +80,7 @@
             </ul>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="section" id="communitySection">
     <div>
