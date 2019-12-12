@@ -1,4 +1,4 @@
-apiVersion: certmanager.k8s.io/v1alpha1
+apiVersion: cert-manager.io/v1alpha2
 kind: ClusterIssuer
 metadata:
   name: rchain-coop
@@ -8,4 +8,5 @@ spec:
     email: kayvan.kazeminejad@rchain.coop
     privateKeySecretRef:
       name: tls-letsencrypt-rchain-coop
+    selector: {}
     http01: {}
