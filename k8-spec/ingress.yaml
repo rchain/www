@@ -4,8 +4,8 @@ kind: Ingress
 metadata:
   name: dev-rchain-coop
   annotations:
-    kubernetes.io/ingress.global-static-ip-name: dev-rchain-coop-ingress
     kubernetes.io/ingress.class: nginx
+    kubernetes.io/ingress.global-static-ip-name: rchain-coop-ip
     certmanager.k8s.io/cluster-issuer: rchain-coop
 
 spec:
