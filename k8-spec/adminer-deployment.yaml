@@ -54,11 +54,11 @@ spec:
           httpGet:
             path: /
             port: 8080
-          initialDelaySeconds: 1
-          timeoutSeconds: 1
+          initialDelaySeconds: 2
+          timeoutSeconds: 2
         readinessProbe:
           httpGet:
             path: /
             port: 8080
-          initialDelaySeconds: 1
-          periodSeconds: 1
+          initialDelaySeconds: 2
+          periodSeconds: 2

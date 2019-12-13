@@ -19,6 +19,7 @@ metadata:
   labels:
     app: developer-rchain-coop
 spec:
+  type: NodePort
   ports:
     - port: 5432
       protocol: TCP
@@ -43,7 +44,7 @@ spec:
     spec:
       containers:
         - name: postgres
-          image: postgres
+          image: postgres:11
           ports:
             - containerPort: 5432
           env:
