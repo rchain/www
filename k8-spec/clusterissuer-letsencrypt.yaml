@@ -8,5 +8,7 @@ spec:
     email: kayvan.kazeminejad@rchain.coop
     privateKeySecretRef:
       name: tls-letsencrypt-rchain-coop
-    selector: {}
-    http01: {}
+    solvers:
+    - http01:
+        ingress:
+          class: nginx
