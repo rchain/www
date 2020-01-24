@@ -252,7 +252,7 @@ router.get('/token-swap', function (req, res) {
         title: 'REV Issuance',
         style: 'token-swap',
         ogtitle: 'REV Issuance',
-        ogdescription: 'All RHOC tokens will convert at a 1:1 ratio to REV tokens at the launch of the RChain mainnet (Mercury) in Q1 of 2019.',
+        ogdescription: 'All RHOC tokens will convert at a 1:1 ratio to REV tokens at the launch of the RChain mainnet (Mercury).',
         ogurl: 'https://developer.rchain.coop/token-url',
         ogimg: 'https://developer.rchain.coop/assets/twitter-img.png',
         scripts: '/js/tokenSwapBrowser.js'
