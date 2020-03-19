@@ -1,13 +1,20 @@
 var express = require('express');
 var router = express.Router();
 var request = require('request');
-
+var apiCache = require('apicache')
 
 const MAINNET_OBSERVER = "https://observer.services.mainnet.rchain.coop"
 // the total supply of the rchain mainnet is fixed
 const TOTAL_SUPPLY = 870663574.00
 const REV_TO_PHLO = 100000000
+const CIRCULATION_CACHE_TIMEOUT = '1 day'
+const BALANCE_CACHE_TIMEOUT = '5 minutes'
 
+var cache = apiCache.options({
+  statusCodes: {
+    exclude: [500, 400]
+  }
+})
 
 const totalCirculationQuery = `
 new return, rl(\`rho:registry:lookup\`), listOpsCh, RevVaultCh in{
@@ -77,23 +84,40 @@ new return, rl(\`rho:registry:lookup\`), RevVaultCh, vaultCh, balanceCh in {
 }
 
 router.get('/total-supply', function (req, res, next) {
-  res.send(TOTAL_SUPPLY.toString());
+  res.json(TOTAL_SUPPLY);
 });
 
-router.get('/total-circulation', function (req, res, next) {
+router.get('/total-circulation', cache.middleware(CIRCULATION_CACHE_TIMEOUT), function (req, res, next) {
   request.post(MAINNET_OBSERVER + '/api/explore-deploy', { body: totalCirculationQuery }, (err, resp, body) => {
-    const result = JSON.parse(body)
-    const circulation = result['expr'][0]['ExprInt']['data'] / REV_TO_PHLO
-    res.send(circulation.toString())
+    if (resp.statusCode != 200) {
+      res.send(resp.statusCode)
+    } else {
+      try {
+        const result = JSON.parse(body)
+        const circulation = result['expr'][0]['ExprInt']['data'] / REV_TO_PHLO
+        res.json(circulation)
+      }
+      catch{
+        res.send(500)
+      }
+    }
   })
 });
 
-router.get('/balance/:address', function (req, res, next) {
+router.get('/balance/:address', cache.middleware(BALANCE_CACHE_TIMEOUT), function (req, res, next) {
   const query = balanceQuery(req.params.address)
   request.post(MAINNET_OBSERVER + '/api/explore-deploy', { body: query }, (err, resp, body) => {
-    const result = JSON.parse(body)
-    const balance = result['expr'][0]['ExprInt']['data'] / REV_TO_PHLO
-    res.send(circulation.toString())
+    if (resp.statusCode != 200) {
+      res.send(resp.statusCode)
+    } else {
+      try {
+        const result = JSON.parse(body)
+        const balance = result['expr'][0]['ExprInt']['data'] / REV_TO_PHLO
+        res.json(balance)
+      } catch{
+        res.json(0)
+      }
+    }
   })
 });
 
