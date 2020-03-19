@@ -7,6 +7,7 @@ var expressValidator = require('express-validator');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var apiRouter = require('./routes/api');
 
 var app = express();
 
@@ -17,33 +18,34 @@ app.set('view engine', 'hbs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({
-    extended: false
+  extended: false
 }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(expressValidator({
-    errorFormatter: function (param, msg, value) {
-        var namespace = param.split('.'),
-            root = namespace.shift(),
-            formParam = root;
+  errorFormatter: function (param, msg, value) {
+    var namespace = param.split('.'),
+      root = namespace.shift(),
+      formParam = root;
 
-        while (namespace.length) {
-            formParam += '[' + namespace.shift() + ']';
-        }
-        return {
-            param: formParam,
-            msg: msg,
-            value: value
-        };
+    while (namespace.length) {
+      formParam += '[' + namespace.shift() + ']';
     }
+    return {
+      param: formParam,
+      msg: msg,
+      value: value
+    };
+  }
 }));
 
+app.use('/api', apiRouter);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
-    next(createError(404));
+  next(createError(404));
 });
 
 // error handler
@@ -60,18 +62,18 @@ app.use(function (err, req, res, next) {
 */
 
 app.use(function (err, req, res, next) {
-            console.error(err.message);
-            if (!err.statusCode) err.statusCode = 500; // Sets a generic server error status code if none is part of the err
+  console.error(err.message);
+  if (!err.statusCode) err.statusCode = 500; // Sets a generic server error status code if none is part of the err
 
-            if (err.shouldRedirect) {
-                res.render('error-page', {
-                        title: 'Error',
-                        style: 'error-page'
-                    }); // Renders a myErrorPage.html for the user
-                }
-                else {
-                    res.status(err.statusCode).send(err.message); // If shouldRedirect is not defined in our error, sends our original err data
-                }
-            });
+  if (err.shouldRedirect) {
+    res.render('error-page', {
+      title: 'Error',
+      style: 'error-page'
+    }); // Renders a myErrorPage.html for the user
+  }
+  else {
+    res.status(err.statusCode).send(err.message); // If shouldRedirect is not defined in our error, sends our original err data
+  }
+});
 
-        module.exports = app;
+module.exports = app;
