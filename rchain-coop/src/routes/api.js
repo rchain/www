@@ -10,6 +10,16 @@ const REV_TO_PHLO = 100000000
 const CIRCULATION_CACHE_TIMEOUT = '1 day'
 const BALANCE_CACHE_TIMEOUT = '5 minutes'
 
+// coop addresses
+const coopSaleAddr = "11112GNiZeEQkMcSHRFgWbYvRuiKAN4Y44Jd1Ld6taFsGrw5JNHLtX"
+const coopTreasuryAddr = "111126JvMwXfDi6sBQNVwvSSNCMpXapTFTD1poQVzh7mzhN3WWn4kF"
+const coopResearchAddr = "1111zQqAW8zJxiAbPwtSi48WCHiQem5hBxkh3DLY7fe8V1Z947Uc4"
+const coopReserveAddr = "11112We8VJbQw7uvKUqvNc6L8X4EzC2yHHabRVZQC4J7M3vqf1b3yG"
+const coopDeploymentAddr = "11112DnHZWMxhRQH6AdfF1fh3VZbH5NW7wiq8xEsRy2DgczR5Yzsrd"
+const POSAddr = "1111V2DFLhSTYyDGwukVeYkoB3sHwEo78HviZsF8T8XxxRdLQ5j5P"
+
+const coopAddresses = [coopSaleAddr, coopTreasuryAddr, coopResearchAddr, coopReserveAddr, coopDeploymentAddr, POSAddr]
+
 var cache = apiCache.options({
   statusCodes: {
     exclude: [500, 400]
@@ -38,12 +48,12 @@ new return, rl(\`rho:registry:lookup\`), listOpsCh, RevVaultCh in{
         ret!(a + b)
       }|
       coopAddressesCh!([
-        "11112GNiZeEQkMcSHRFgWbYvRuiKAN4Y44Jd1Ld6taFsGrw5JNHLtX", // coopSaleAddr
-        "111126JvMwXfDi6sBQNVwvSSNCMpXapTFTD1poQVzh7mzhN3WWn4kF", // coopTreasuryAddr
-        "1111zQqAW8zJxiAbPwtSi48WCHiQem5hBxkh3DLY7fe8V1Z947Uc4", // coopResearchAddr
-        "11112We8VJbQw7uvKUqvNc6L8X4EzC2yHHabRVZQC4J7M3vqf1b3yG", // coopReserveAddr
-        "11112DnHZWMxhRQH6AdfF1fh3VZbH5NW7wiq8xEsRy2DgczR5Yzsrd", // coopDeploymentAddr
-        "1111V2DFLhSTYyDGwukVeYkoB3sHwEo78HviZsF8T8XxxRdLQ5j5P" // POSAddr
+        "${coopSaleAddr}",
+        "${coopTreasuryAddr}",
+        "${coopResearchAddr}",
+        "${coopReserveAddr}",
+        "${coopDeploymentAddr}",
+        "${POSAddr}"
       ]) |
       for (@coopAddresses <- coopAddressesCh){
         @ListOps!("parMap", coopAddresses, *checkBalance, *balancesCh)|
@@ -105,20 +115,24 @@ router.get('/total-circulation', cache.middleware(CIRCULATION_CACHE_TIMEOUT), fu
 });
 
 router.get('/balance/:address', cache.middleware(BALANCE_CACHE_TIMEOUT), function (req, res, next) {
-  const query = balanceQuery(req.params.address)
-  request.post(MAINNET_OBSERVER + '/api/explore-deploy', { body: query }, (err, resp, body) => {
-    if (resp.statusCode != 200) {
-      res.send(resp.statusCode)
-    } else {
-      try {
-        const result = JSON.parse(body)
-        const balance = result['expr'][0]['ExprInt']['data'] / REV_TO_PHLO
-        res.json(balance)
-      } catch{
-        res.json(0)
+  if (coopAddresses.includes(req.params.address)) {
+    const query = balanceQuery(req.params.address)
+    request.post(MAINNET_OBSERVER + '/api/explore-deploy', { body: query }, (err, resp, body) => {
+      if (resp.statusCode != 200) {
+        res.send(resp.statusCode)
+      } else {
+        try {
+          const result = JSON.parse(body)
+          const balance = result['expr'][0]['ExprInt']['data'] / REV_TO_PHLO
+          res.json(balance)
+        } catch{
+          res.json(0)
+        }
       }
-    }
-  })
+    })
+  } else {
+    res.send(404)
+  }
 });
 
 
