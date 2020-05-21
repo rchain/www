@@ -42,7 +42,7 @@ a {
 
 h3 {
     font-family: Montserrat-Regular;
-    margin: 0 auto 4rem;
+    margin: 0 auto 1rem;
     text-align: center;
     width: 80%;
 }
@@ -116,4 +116,24 @@ p img {
         margin-right: .5rem;
         width: 10%;
     }
+}
+
+figure.release-cover {
+    box-shadow: 0 0 25px rgba(5,5,38,0.1);
+    border-radius: 3px;
+    padding: 4% 5% 5%;
+    background-color: #fff;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
+.row .col-4 a{
+    text-decoration: none!important;
+    font-size: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
