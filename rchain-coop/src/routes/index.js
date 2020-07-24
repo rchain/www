@@ -94,20 +94,16 @@ router.get('/portfolio', function (req, res) {
 });
 
 router.get('/member-invoice', function (req, res) {
-    res.redirect(301, 'https://rchain.coop/community')
+    res.render('member-invoice', {
+        title: 'Membership Invoice',
+        style: 'community',
+        ogtitle: 'Membership Invoice',
+        ogdescription: "",
+        ogurl: selfUrl + '/member-invoice',
+        ogimg: '',
+        scripts: ''
+    });
 });
-
-// router.get('/member-invoice', function (req, res) {
-//     res.render('member-invoice', {
-//         title: 'Membership Invoice',
-//         style: 'community',
-//         ogtitle: 'Membership Invoice',
-//         ogdescription: "",
-//         ogurl: selfUrl + '/member-invoice',
-//         ogimg: '',
-//         scripts: ''
-//     });
-// });
 
 router.get('/success', function (req, res) {
     res.render('success', {
