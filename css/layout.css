@@ -293,14 +293,16 @@ li {
 
 .nav .item.links:hover:nth-child(2),
 .nav .item.links:hover:nth-child(3),
-.nav .item.links:hover:nth-child(4) {
+.nav .item.links:hover:nth-child(4),
+.nav .item.links:hover:nth-child(5) {
     border-bottom: 3px solid #a50034;
     margin: 1.3rem 2.5rem 0;
 }
 
 .nav .item.links:hover:nth-child(2) a,
 .nav .item.links:hover:nth-child(3) a,
-.nav .item.links:hover:nth-child(4) a {
+.nav .item.links:hover:nth-child(4) a,
+.nav .item.links:hover:nth-child(5) a {
     color: #a50034;
 }
 
@@ -364,7 +366,7 @@ li {
     display: none;
 }
 
-.nav .item:nth-child(6) {
+.nav .item:nth-child(7) {
     margin: 0;
     position: absolute;
     right: 2rem;
@@ -372,7 +374,7 @@ li {
     top: .5rem;
 }
 
-.nav .item:nth-child(6) a.btn-blue {
+.nav .item:nth-child(7) a.btn-blue {
     font-size: .9rem;
 }
 
@@ -396,7 +398,8 @@ li {
 .nav .item .dropdown a:nth-child(2),
 .nav .item .dropdown a:nth-child(3),
 .nav .item .dropdown a:nth-child(4),
-.nav .item .dropdown a:nth-child(5) {
+.nav .item .dropdown a:nth-child(5),
+.nav .item .dropdown a:nth-child(6) {
     margin-bottom: 1rem;
 }
 
@@ -437,7 +440,7 @@ li {
   width: 200px
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1356px) {
     .nav .wrapper {
         -webkit-box-pack: justify;
             -ms-flex-pack: justify;
@@ -454,11 +457,11 @@ li {
         width: 7rem;
         top: .9rem;
     }
-    .nav .item.links:hover:nth-child(2), .nav .item.links:hover:nth-child(3),
-    .nav .item.links:hover:nth-child(4) {
+    .nav .item.links:hover:nth-child(2), .nav .item.links:hover:nth-child(3), .nav .item.links:hover:nth-child(4),
+    .nav .item.links:hover:nth-child(5) {
         margin: 1.2rem 0 0 0;
     }
-    .nav .item:nth-child(6), .nav .item.links:nth-child(6) {
+    .nav .item:nth-child(7), .nav .item.links:nth-child(7) {
         margin: 0;
         position: relative;
         right: 1rem;
@@ -470,10 +473,10 @@ li {
     .nav .item.links:nth-child(5) {
         margin: 1.2rem 0 0 0;
     }
-    .nav .item:nth-child(6) a.btn-blue {
+    .nav .item:nth-child(7) a.btn-blue {
         padding: .7rem 1.5rem;
     }
-    .nav.scroll .item:nth-child(6) a.btn-blue {
+    .nav.scroll .item:nth-child(7) a.btn-blue {
         font-size: .8rem;
     }
     .section {
@@ -505,7 +508,7 @@ li {
     .nav .item.links {
         margin: 1.4rem 0 0 0;
     }
-    .nav .item.links:hover:nth-child(2), .nav .item.links:hover:nth-child(3), .nav .item.links:hover:nth-child(4) {
+    .nav .item.links:hover:nth-child(2), .nav .item.links:hover:nth-child(3), .nav .item.links:hover:nth-child(4), .nav .item.links:hover:nth-child(5) {
         margin: 1.4rem 0 0 0;
     }
     .nav .wrapper .item:nth-child(1) {
@@ -516,15 +519,18 @@ li {
         top: 1.1rem;
         width: 5rem;
     }
-    .nav .item:nth-child(6), .nav .item.links:nth-child(6) {
+    .nav .item.links:nth-child(5) {
+        margin: 1.5rem 0 0 0;
+    }
+    .nav .item:nth-child(7), .nav .item.links:nth-child(7) {
         right: .5rem;
         top: 1.1rem;
     }
-    .nav .item:nth-child(6) a.btn-blue {
+    .nav .item:nth-child(7) a.btn-blue {
         font-size: .8rem;
         padding: .5rem 1rem;
     }
-    .nav.scroll .item:nth-child(6) a.btn-blue {
+    .nav.scroll .item:nth-child(7) a.btn-blue {
         font-size: .7rem;
     }
     .nav .item .dropdown a {
@@ -628,12 +634,12 @@ li {
         font-size: 2.2rem;
     }
 
-    .nav .item:nth-child(6), .nav .item.links:nth-child(6) {
+    .nav .item:nth-child(7), .nav .item.links:nth-child(7) {
         margin: 0 0 0 .5rem;
         right: initial;
         top: initial;
     }
-    .nav .item:nth-child(6) a.btn-blue, .nav.scroll .item:nth-child(6) a.btn-blue {
+    .nav .item:nth-child(7) a.btn-blue, .nav.scroll .item:nth-child(7) a.btn-blue {
         font-size: 1.6rem;
     }
     .nav .wrapper {
@@ -667,10 +673,12 @@ li {
     .nav .item.links:hover:nth-child(2),
     .nav .item.links:hover:nth-child(3),
     .nav .item.links:hover:nth-child(4),
+    .nav .item.links:hover:nth-child(5),
     .nav .item.links:nth-child(2),
     .nav .item.links:nth-child(3),
     .nav .item.links:nth-child(4),
-    .nav .item.links:nth-child(5) {
+    .nav .item.links:nth-child(5),
+    .nav .item.links:nth-child(6) {
         margin: 0 0 .5rem 1rem;
     }
     .nav .item:hover .dropdown {
@@ -811,7 +819,7 @@ li {
     .nav .item {
         font-size: 2rem;
     }
-    .nav .item:nth-child(6) a.btn-blue {
+    .nav .item:nth-child(7) a.btn-blue {
         text-align: center;
     }
     .nav .wrapper .item:nth-child(1) {
