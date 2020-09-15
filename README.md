@@ -1,3 +1,15 @@
+# ARCHIVED
+___
+- [rchain.coop](https://rchain.coop) is now hosted as a GitHub Page from repo: [www.rchain.coop](https://github.com/rchain/www.rchain.coop)
+- [blog.rchain.coop](https://blog.rchain.coop) is now hosted on a 3rd party host
+- [developer.rchain.coop](https://developer.rchain.coop) is now hosted as a GitHub Page from repo: [developer.rchain.coop](https://github.com/rchain/developer.rchain.coop)
+- [rsong.rchain.coop](https://rsong.rchain.coop) is now hosted as a GitHub Page from repo: [rsong.rchain.coop](https://github.com/rchain/rsong.rchain.coop)
+___
+<br />
+<br />
+
+## Archived Content (below)
+
 www
 ----
 www repository   contains Rchain websites.  These websites are:
